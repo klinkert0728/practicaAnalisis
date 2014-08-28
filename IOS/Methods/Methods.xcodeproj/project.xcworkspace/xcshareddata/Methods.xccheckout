@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EAAAE08A-358F-4E1C-A484-3F0F59300CC7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Methods</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>38C887492C12B34BA74F23C31FF9AE579DF4FF6A</key>
+		<string>https://github.com/klinkert0728/practicaAnalisis.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>IOS/Methods/Methods.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>38C887492C12B34BA74F23C31FF9AE579DF4FF6A</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/klinkert0728/practicaAnalisis.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>38C887492C12B34BA74F23C31FF9AE579DF4FF6A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>38C887492C12B34BA74F23C31FF9AE579DF4FF6A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>practicaAnalisis</string>
+		</dict>
+	</array>
+</dict>
+</plist>
