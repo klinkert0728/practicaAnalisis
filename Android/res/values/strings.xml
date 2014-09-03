@@ -4,5 +4,9 @@
     <string name="app_name">MetodosAnalisis</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_una_variable">UnaVariableActivity</string>
+    <string name="title_activity_sistemas_de_ecuaciones">SistemasDeEcuaciones</string>
+    <string name="title_activity_interpolacion">Interpolacion</string>
+    <string name="title_activity_interpolacion_integracion">InterpolacionIntegracion</string>
 
 </resources>

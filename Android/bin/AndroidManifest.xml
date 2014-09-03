@@ -22,6 +22,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.metodosanalisis.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name="com.example.metodosanalisis.UnaVariable"
+            android:label="@string/title_activity_una_variable" >
+        </activity>
+        <activity
+            android:name="com.example.metodosanalisis.SistemasDeEcuaciones"
+            android:label="@string/title_activity_sistemas_de_ecuaciones" >
+        </activity>
+        <activity
+            android:name="com.example.metodosanalisis.Interpolacion"
+            android:label="@string/title_activity_interpolacion" >
+        </activity>
+        <activity
+            android:name="com.example.metodosanalisis.InterpolacionIntegracion"
+            android:label="@string/title_activity_interpolacion_integracion" >
+        </activity>
     </application>
 
 </manifest>
