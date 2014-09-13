@@ -23,13 +23,13 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
-	
+
+
 	public void UnaVar(View v){
 		Intent IngresarUnaVariable = new Intent(this,UnaVariable.class);
 		startActivity(IngresarUnaVariable);
 	}
-	
+
 	public void SistEcua(View v){
 		Intent IngresarEcuaciones = new Intent(this,SistemasDeEcuaciones.class);
 		startActivity(IngresarEcuaciones);
