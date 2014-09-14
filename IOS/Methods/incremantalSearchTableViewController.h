@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <math.h>
+#import "busquedaIncremental.h"
 
-@interface incremantalSearchTableViewController : UITableViewController
+@interface incremantalSearchTableViewController : UITableViewController{
+    
+    UITextField * funcion;
+    UITextField * valorInicial;
+    UITextField * delta;
+    UITextField * numeroIteraciones;
+}
 
 @end
