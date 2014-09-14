@@ -2,7 +2,10 @@ package com.example.metodosanalisis;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 
 public class UnaVariable extends Activity {
 
@@ -18,5 +21,12 @@ public class UnaVariable extends Activity {
 		getMenuInflater().inflate(R.menu.una_variable, menu);
 		return true;
 	}
+	
+	
+	public void irabiseccion(View v){
+		Intent biseccion = new Intent(this,biseccion.class);
+		startActivity(biseccion);
+	}
+	
 
 }
