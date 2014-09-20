@@ -51,6 +51,18 @@
         android:layout_x="9dp"
         android:layout_y="66dp"
         android:ems="10"
+        android:hint="X0"
         android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/calcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="97dp"
+        android:layout_y="198dp"
+        android:onClick="calcular"
+        android:text="Calcular" />
+
+ 
 
 </AbsoluteLayout>
