@@ -37,6 +37,7 @@
                     <connections>
                         <segue destination="Zhn-19-V3u" kind="push" identifier="incrementalSegue" id="nEB-9Q-8Xa"/>
                         <segue destination="Axk-ll-3tt" kind="push" identifier="bisectionSegue" id="qCW-fy-9N0"/>
+                        <segue destination="XYn-XH-Es1" kind="push" identifier="regulaFalsiSegue" id="Yda-xO-67c"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KbG-hg-o3G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -68,7 +69,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgi-Nl-l09" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243" y="298"/>
+            <point key="canvasLocation" x="1257" y="-318"/>
         </scene>
         <!--Bisection Table View Controller-->
         <scene sceneID="I9x-1E-29F">
@@ -95,7 +96,34 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRF-rx-wAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1237" y="1007"/>
+            <point key="canvasLocation" x="1265" y="298"/>
+        </scene>
+        <!--Regula Falsi Table View Controller-->
+        <scene sceneID="eYX-WP-Nns">
+            <objects>
+                <tableViewController id="XYn-XH-Es1" customClass="regulaFalsiTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="F61-dU-dQG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="aRg-1U-fKo">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aRg-1U-fKo" id="nRF-7K-ygl">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XYn-XH-Es1" id="m1l-EH-lzF"/>
+                            <outlet property="delegate" destination="XYn-XH-Es1" id="sY7-9Y-AfO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="AEO-XI-Fno"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Geu-7L-yyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1265" y="929"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="byR-cq-uC7">

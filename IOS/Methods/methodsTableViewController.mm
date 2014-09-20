@@ -63,6 +63,10 @@
                 break;
             case 1:
                 [self performSegueWithIdentifier:@"bisectionSegue" sender:nil];
+                break;
+            case 2:
+                [self performSegueWithIdentifier:@"regulaFalsiSegue" sender:nil];
+                break;
             default:
                 break;
         }
