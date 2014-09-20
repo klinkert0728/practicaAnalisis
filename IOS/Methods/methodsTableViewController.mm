@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    methodsName = [[NSArray alloc]initWithObjects:@"Búsqueda Incremental",@"Bisección",@"Regula Falsi", nil];
+    methodsName = [[NSArray alloc]initWithObjects:@"Búsqueda Incremental",@"Bisección",@"Regula Falsi",@"Punto Fijo", nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #include "evaluador.h"
 
 @interface regulaFalsi : NSObject{

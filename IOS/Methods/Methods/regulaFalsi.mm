@@ -33,6 +33,7 @@
     double yi = evaluarFuncion(func, xiTemp);
     double ys = evaluarFuncion(func, xsTemp);
     
+    
     if (yi == 0) {
         NSLog(@"%f es la raiz\n", xi);
        // [resultados setResultados:xi :0.0];
@@ -68,16 +69,29 @@
         }
         
         if (yr == 0) {
+            
+            UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Raiz Encontrada" message:[NSString stringWithFormat:@"%f es raiz", xr] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+
             NSLog(@"%f es raiz\n", xr);
             //[resultados setResultados:xr :error];
         } else if (error < tol) {
+            
+            UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Raiz Encontrada" message:[NSString stringWithFormat:@"%f es raiz con %e", xr, tol] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+            
             NSLog(@"%f es raiz con %e\n", xr, tol);
             //[resultados setResultados:xr :error];
         } else if (cont == iter) {
             NSLog(@"No se hallo raiz con %d iteraciones\n", iter);
+            
+            UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Raiz no Encontrada" message:[NSString stringWithFormat:@"No se hallo raiz con %d iteraciones", iter] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+
             //[resultados setResultado:iter];
         } else {
-            NSLog(@"Error(0)");
+            UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Raiz no Encontrada" message:@"Error" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
         }
     }
     
