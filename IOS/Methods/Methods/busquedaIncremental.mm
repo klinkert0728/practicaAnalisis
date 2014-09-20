@@ -54,14 +54,14 @@
 		
 		if (Y1 == 0) {
             NSLog(@"%@ es la raiz\n", X1);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@ es la raiz\n", X1] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%@ es la raiz", X1] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
             [alert show];
            // return [NSString stringWithFormat:@"%@ es la raiz\n", X1];
 			//
 			//[resultados setResultado:[X1 doubleValue]];
 		} else if (Y0*Y1 < 0) {
 			NSLog(@"[%@, %@] definen intervalo\n", X0, X1);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"[%@, %@] definen intervalo\n", X0, X1] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"[%@, %@] definen intervalo", X0, X1] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
             [alert show];
             //return [NSString stringWithFormat:@"[%@, %@] definen intervalo\n", X0, X1];
 			//[resultados setResultados:[X0 doubleValue] :[X1 doubleValue]];

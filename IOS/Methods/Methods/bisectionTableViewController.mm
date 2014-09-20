@@ -1,23 +1,21 @@
 //
-//  methodsTableViewController.m
+//  bisectionTableViewController.m
 //  Methods
 //
-//  Created by Daniel Klinkert on 8/28/14.
+//  Created by Daniel Klinkert on 9/19/14.
 //  Copyright (c) 2014 _danielKlinkert_. All rights reserved.
 //
 
-#import "methodsTableViewController.h"
+#import "bisectionTableViewController.h"
 
-@interface methodsTableViewController ()
+@interface bisectionTableViewController ()
 
 @end
 
-@implementation methodsTableViewController
+@implementation bisectionTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    methodsName = [[NSArray alloc]initWithObjects:@"Búsqueda Incremental",@"Bisección",@"Regula Falsi",@"Punto Fijo", nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -34,45 +32,104 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     // Return the number of rows in the section.
-    return [methodsName count];
+    if (section == 0 ) {
+        return 5;
+    }else{
+        return 1;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
+    
     // Configure the cell...
-    [cell.textLabel setText:[methodsName objectAtIndex:indexPath.row]];
+    CGRect field = CGRectMake(10, 10, tableView.frame.size.height, 25);
+    
+    if (!function) {
+        function = [[UITextField alloc]initWithFrame:field];
+    }
+    
+    if (!xi) {
+        xi = [[UITextField alloc]initWithFrame:field];
+    }
+    
+    if (!xs) {
+        xs = [[UITextField alloc]initWithFrame:field];
+    }
+    
+    if (!tolerancia) {
+        tolerancia = [[UITextField alloc]initWithFrame:field];
+    }
+    
+    if (!nIteraciones) {
+        nIteraciones = [[UITextField alloc]initWithFrame:field];
+    }
+    
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+                
+            case 0:
+                [cell addSubview:function];
+                [function setPlaceholder:@"Función"];
+                break;
+            case 1:
+                [cell addSubview:xi];
+                [xi setPlaceholder:@"Valor Inferior"];
+                break;
+            case 2:
+                [cell addSubview:xs];
+                [xs setPlaceholder:@"Valor superior"];
+                break;
+            case 3:
+                [cell addSubview:tolerancia];
+                [tolerancia setPlaceholder:@"Tolerancia"];
+                break ;
+            case 4:
+                [cell addSubview:nIteraciones];
+                [nIteraciones setPlaceholder:@"Numero de Iteraciones"];
+                break;
+                
+            default:
+                break;
+        }
+    }else if (indexPath.section == 1){
+        
+        [cell.textLabel setText:@"Calcular"];
+        [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
+    }
+    
     
     return cell;
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0){
-        switch (indexPath.row) {
-            case 0:
-                [self performSegueWithIdentifier:@"incrementalSegue" sender:nil];
-                break;
-            case 1:
-                [self performSegueWithIdentifier:@"bisectionSegue" sender:nil];
-                break;
-            case 2:
-                [self performSegueWithIdentifier:@"regulaFalsiSegue" sender:nil];
-                break;
-            default:
-                break;
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 1) {
+        if ([function.text isEqualToString:@""] || [xi.text isEqualToString:@""] || [xs.text isEqualToString:@""]|| [nIteraciones.text isEqualToString:@""]) {
+            UIAlertView * all = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Debes completar todos los campos para poder calcular el resultado" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            
+            [all show];
+        }else{
+            
+            
+            id myMethod;
+            myMethod = [bisection new];
+            
+            [myMethod initWithFunction:function.text valorInicial:xi.text valorSuperior:xs.text tolerancia:[tolerancia.text doubleValue] iteraciones:[nIteraciones.text intValue] ];
         }
     }
 }
-
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
