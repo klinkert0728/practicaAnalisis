@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LAZ-hn-cpI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LAZ-hn-cpI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Methods Table View Controller-->
@@ -36,6 +36,7 @@
                     <navigationItem key="navigationItem" id="ZzD-x8-xX4"/>
                     <connections>
                         <segue destination="Zhn-19-V3u" kind="push" identifier="incrementalSegue" id="nEB-9Q-8Xa"/>
+                        <segue destination="Axk-ll-3tt" kind="push" identifier="bisectionSegue" id="qCW-fy-9N0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KbG-hg-o3G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -69,6 +70,33 @@
             </objects>
             <point key="canvasLocation" x="1243" y="298"/>
         </scene>
+        <!--Bisection Table View Controller-->
+        <scene sceneID="I9x-1E-29F">
+            <objects>
+                <tableViewController id="Axk-ll-3tt" customClass="bisectionTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Vxv-I3-SpF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="VYx-D7-Io8">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VYx-D7-Io8" id="Hza-eQ-ASn">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Axk-ll-3tt" id="moS-d1-cPa"/>
+                            <outlet property="delegate" destination="Axk-ll-3tt" id="TRD-M4-BYc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="FKp-Lj-OYx"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sRF-rx-wAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237" y="1007"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="byR-cq-uC7">
             <objects>
@@ -91,9 +119,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

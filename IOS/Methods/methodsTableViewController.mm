@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    methodsName = [[NSArray alloc]initWithObjects:@"Búsqueda Incremental",@"Bisección",@"Regula Falsi", nil];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -39,7 +41,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     // Return the number of rows in the section.
-    return 1;
+    return [methodsName count];
 }
 
 
@@ -47,7 +49,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     // Configure the cell...
-    [cell.textLabel setText:@"Busqueda Incremental"];
+    [cell.textLabel setText:[methodsName objectAtIndex:indexPath.row]];
     
     return cell;
 }
@@ -59,7 +61,8 @@
             case 0:
                 [self performSegueWithIdentifier:@"incrementalSegue" sender:nil];
                 break;
-                
+            case 1:
+                [self performSegueWithIdentifier:@"bisectionSegue" sender:nil];
             default:
                 break;
         }

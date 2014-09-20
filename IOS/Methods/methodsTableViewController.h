@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface methodsTableViewController : UITableViewController
+@interface methodsTableViewController : UITableViewController{
+    NSArray * methodsName;
+}
 
 @end
