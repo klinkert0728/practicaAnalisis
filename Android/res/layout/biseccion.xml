@@ -58,11 +58,19 @@
         android:id="@+id/calcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="97dp"
-        android:layout_y="198dp"
+        android:layout_x="107dp"
+        android:layout_y="384dp"
         android:onClick="calcular"
         android:text="Calcular" />
 
- 
+    <EditText
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="48dp"
+        android:layout_y="198dp"
+        android:ems="10"
+        android:hint="Resultado"
+        android:inputType="numberDecimal" />
 
 </AbsoluteLayout>

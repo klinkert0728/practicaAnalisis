@@ -8,5 +8,6 @@
     <string name="title_activity_sistemas_de_ecuaciones">SistemasDeEcuaciones</string>
     <string name="title_activity_interpolacion">Interpolacion</string>
     <string name="title_activity_interpolacion_integracion">InterpolacionIntegracion</string>
+    <string name="invalid_function_exception">Función inválida</string>
 
 </resources>
