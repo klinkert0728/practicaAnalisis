@@ -16,7 +16,7 @@
 		0BE09E0519CD4CC400670E79 /* regulaFalsiTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0BE09E0419CD4CC400670E79 /* regulaFalsiTableViewController.mm */; };
 		0BE09E0819CD4CD300670E79 /* regulaFalsi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0BE09E0719CD4CD300670E79 /* regulaFalsi.mm */; };
 		0BE09E0B19CD531200670E79 /* setPoint.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0BE09E0A19CD531200670E79 /* setPoint.mm */; };
-		0BE09E0E19CD532A00670E79 /* setPointTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE09E0D19CD532A00670E79 /* setPointTableViewController.m */; };
+		0BE09E0E19CD532A00670E79 /* setPointTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0BE09E0D19CD532A00670E79 /* setPointTableViewController.mm */; };
 		6590C91519AFC0D600877D5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590C91419AFC0D600877D5C /* main.m */; };
 		6590C91819AFC0D600877D5C /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6590C91719AFC0D600877D5C /* AppDelegate.mm */; };
 		6590C91E19AFC0D600877D5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6590C91C19AFC0D600877D5C /* Main.storyboard */; };
@@ -55,7 +55,7 @@
 		0BE09E0919CD531200670E79 /* setPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setPoint.h; sourceTree = "<group>"; };
 		0BE09E0A19CD531200670E79 /* setPoint.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = setPoint.mm; sourceTree = "<group>"; };
 		0BE09E0C19CD532A00670E79 /* setPointTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setPointTableViewController.h; sourceTree = "<group>"; };
-		0BE09E0D19CD532A00670E79 /* setPointTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setPointTableViewController.m; sourceTree = "<group>"; };
+		0BE09E0D19CD532A00670E79 /* setPointTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = setPointTableViewController.mm; sourceTree = "<group>"; };
 		6590C90F19AFC0D600877D5C /* Methods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Methods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6590C91319AFC0D600877D5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6590C91419AFC0D600877D5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,16 +121,16 @@
 				0BE09E0719CD4CD300670E79 /* regulaFalsi.mm */,
 				0BE09E0319CD4CC400670E79 /* regulaFalsiTableViewController.h */,
 				0BE09E0419CD4CC400670E79 /* regulaFalsiTableViewController.mm */,
+				0BE09E0919CD531200670E79 /* setPoint.h */,
+				0BE09E0A19CD531200670E79 /* setPoint.mm */,
+				0BE09E0C19CD532A00670E79 /* setPointTableViewController.h */,
+				0BE09E0D19CD532A00670E79 /* setPointTableViewController.mm */,
 				0B12864019C4DA7600ACB608 /* evaluador.h */,
 				0B12864119C4DA7600ACB608 /* evaluador.mm */,
 				0B12864219C4DA7600ACB608 /* mathexpr.h */,
 				0B12864319C4DA7600ACB608 /* mathexpr.mm */,
 				6590C93519AFC16B00877D5C /* methodsTableViewController.h */,
 				6590C93619AFC16B00877D5C /* methodsTableViewController.mm */,
-				0BE09E0919CD531200670E79 /* setPoint.h */,
-				0BE09E0A19CD531200670E79 /* setPoint.mm */,
-				0BE09E0C19CD532A00670E79 /* setPointTableViewController.h */,
-				0BE09E0D19CD532A00670E79 /* setPointTableViewController.m */,
 				6590C91619AFC0D600877D5C /* AppDelegate.h */,
 				6590C91719AFC0D600877D5C /* AppDelegate.mm */,
 				6590C91C19AFC0D600877D5C /* Main.storyboard */,
@@ -278,7 +278,7 @@
 				6590C91519AFC0D600877D5C /* main.m in Sources */,
 				0BE09DFF19CC6F0900670E79 /* bisection.mm in Sources */,
 				0B16885B19C4C86100D72D2A /* busquedaIncremental.mm in Sources */,
-				0BE09E0E19CD532A00670E79 /* setPointTableViewController.m in Sources */,
+				0BE09E0E19CD532A00670E79 /* setPointTableViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

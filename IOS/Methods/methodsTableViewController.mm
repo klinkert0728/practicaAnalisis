@@ -67,11 +67,17 @@
             case 2:
                 [self performSegueWithIdentifier:@"regulaFalsiSegue" sender:nil];
                 break;
+            case 3:
+                [self performSegueWithIdentifier:@"setPointSegue" sender:nil];
+                break;
             default:
                 break;
         }
     }
 }
+
+
+
 
 /*
  // Override to support conditional editing of the table view.
