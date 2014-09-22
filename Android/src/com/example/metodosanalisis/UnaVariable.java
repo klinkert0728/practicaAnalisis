@@ -32,5 +32,9 @@ public class UnaVariable extends Activity {
 		Intent reglaFalsa = new Intent(this,reglafalsa.class);
 		startActivity(reglaFalsa);
 	}
+	public void iraPuntofijo(View v ){
+		Intent PuntoFijo = new Intent(this,PuntoFijo.class);
+		startActivity(PuntoFijo);
+	}
 
 }

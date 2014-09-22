@@ -34,5 +34,19 @@
         android:background="#f5f5f5"
         android:onClick="irareglafalsa"
         android:text="Regla Falsa" />
+    
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:textColor="#93cf5a"
+        android:background="#f5f5f5"
+        android:onClick="iraPuntofijo"
+        android:text="Punto fijo" />
+
 
 </RelativeLayout>
