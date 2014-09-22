@@ -9,5 +9,6 @@
     <string name="title_activity_interpolacion">Interpolacion</string>
     <string name="title_activity_interpolacion_integracion">InterpolacionIntegracion</string>
     <string name="invalid_function_exception">Función inválida</string>
+    <string name="title_activity_punto_fijo">PuntoFijo</string>
 
 </resources>

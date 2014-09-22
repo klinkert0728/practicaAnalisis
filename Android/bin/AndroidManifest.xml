@@ -29,15 +29,11 @@
         <activity
             android:name="com.example.metodosanalisis.UnaVariable"
             android:label="@string/title_activity_una_variable" >
-            
         </activity>
-       
         <activity
             android:name="com.example.metodosanalisis.reglafalsa"
             android:label="reglafalsa" >
-            
         </activity>
-        
         <activity
             android:name="com.example.metodosanalisis.SistemasDeEcuaciones"
             android:label="@string/title_activity_sistemas_de_ecuaciones" >
@@ -50,9 +46,13 @@
             android:name="com.example.metodosanalisis.InterpolacionIntegracion"
             android:label="@string/title_activity_interpolacion_integracion" >
         </activity>
-         <activity
+        <activity
             android:name="com.example.metodosanalisis.biseccion"
             android:label="biseccion" >
+        </activity>
+        <activity
+            android:name="com.example.metodosanalisis.PuntoFijo"
+            android:label="@string/title_activity_punto_fijo" >
         </activity>
     </application>
 

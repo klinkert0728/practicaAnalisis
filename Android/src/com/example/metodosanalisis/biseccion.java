@@ -75,7 +75,7 @@ public class biseccion extends Activity {
 				}
 				
 				double temp1=xc;
-				double eRelativo=2;//es solo para que en la primera iteracion sea diferente de 0;
+				double eRelativo= tols + 1;//es solo para que en la primera iteracion sea diferente de 0;
 				double x =0;
 				boolean piteracion = true;
 				
@@ -92,24 +92,25 @@ public class biseccion extends Activity {
 				//implementamos el método de bisección
 				x=xc;
 				int i =0;
-				while(eRelativo!=0){
-					if (eRelativo < tols ){
-						break;
-					}
+				while(eRelativo >= tols){
 					System.out.println(x);
 					System.out.println(eRelativo+"relativo"+">"+tols);
+					temp1 = x;
 					x= (xc+xu)/2;
+					
+					
 					if((e.calculate(xc)*e.calculate(x))<0){
 						xu=x;	
 					}else{
 						xc=x;
 					}
-					if(piteracion ==false){
+					eRelativo = (Math.abs(x-temp1)/x)*100;
+					/*if(piteracion ==false){
 						eRelativo = (Math.abs(x-temp1)/x)*100;
 						temp1 =x;
-					}
-					piteracion=false;
-					temp1=x;
+					}*/
+					//piteracion=false;
+					//temp1=x;
 				}
 				//resultado.setText(String.valueOf(x));
 				resultado.setText(String.valueOf(x));
