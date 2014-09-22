@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="11dp"
+        android:layout_y="14dp"
+        android:textSize="20dp"
+        android:text="F(x)" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_x="50dp"
+        android:layout_y="10dp"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/X1rf"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_x="107dp"
+        android:layout_y="94dp"
+        android:hint="X1"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/X0rf"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_x="18dp"
+        android:layout_y="94dp"
+        android:hint="X0"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/tolrf"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_x="208dp"
+        android:layout_y="95dp"
+        android:hint="Tol"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/resultadorf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="44dp"
+        android:layout_y="267dp"
+        android:hint="Resultado"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/calcularrf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="114dp"
+        android:layout_y="366dp"
+        android:text="Button" />
+
+</AbsoluteLayout>

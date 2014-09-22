@@ -19,22 +19,22 @@ public class biseccion extends Activity {
 	EditText Xcero, Xuno,Tol, funcion, resultado;
 	Float x0,x1, tol;
 	evaluadorFunciones e = new evaluadorFunciones();
-	String fun, xc,xu,tols;
+	double xc, xu,tols;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.biseccion);
+		
+		
 		//obtenemos la variables de los campos
 		Xcero = (EditText) findViewById (R.id.X0);
 		Xuno =  (EditText) findViewById (R.id.X1);
 		Tol =   (EditText) findViewById (R.id.tol);
 		funcion = (EditText) findViewById (R.id.funcion);
 		resultado = (EditText) findViewById (R.id.resultado);
-		fun = funcion.getText().toString();
-		xc= Xcero.getText().toString();
-		
 
-		//pasamos las variables de strings a numeros. se daña si se pone no c por que
+
+		//para que al acceder a los campos de texto no de error si estan vacíos.
 		if (Xcero.getText().toString().equals("")) {
 			x0 = 0f;
 		} else{
@@ -52,26 +52,69 @@ public class biseccion extends Activity {
 			}
 
 		}
+		
+		
+		//función del boton calcular.
 		Button calcular = (Button) findViewById(R.id.calcular);
 
 		calcular.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				double res= 0.0;
+				//obtenemos cada valor de los campos.
+				if(!Xcero.getText().toString().equals("")){
+					xc = Double.parseDouble(Xcero.getText().toString());
+
+				}
+				if((!Xuno.getText().toString().equals(""))){
+					xu = Double.parseDouble(Xuno.getText().toString());
+				}
+
+				if((!Tol.getText().toString().equals(""))){
+					tols = Double.parseDouble(Tol.getText().toString());
+				}
+				
+				double temp1=xc;
+				double eRelativo=2;//es solo para que en la primera iteracion sea diferente de 0;
+				double x =0;
+				boolean piteracion = true;
+				
 				try {
-					Calculable cal = new ExpressionBuilder(fun)
-					.withVariableNames("x").build();
-					cal.setVariable("x", 0);
-					resultado.setText((int) cal.calculate());
-					
-				} catch (UnknownFunctionException e) {
+
+					e.setFunction(funcion.getText().toString());
+					// res = e.calculate(Double.parseDouble(Xcero.getText().toString()));
+
+				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				} catch (UnparsableExpressionException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}	   
+				}
+				
+				//implementamos el método de bisección
+				x=xc;
+				int i =0;
+				while(eRelativo!=0){
+					if (eRelativo < tols ){
+						break;
+					}
+					System.out.println(x);
+					System.out.println(eRelativo+"relativo"+">"+tols);
+					x= (xc+xu)/2;
+					if((e.calculate(xc)*e.calculate(x))<0){
+						xu=x;	
+					}else{
+						xc=x;
+					}
+					if(piteracion ==false){
+						eRelativo = (Math.abs(x-temp1)/x)*100;
+						temp1 =x;
+					}
+					piteracion=false;
+					temp1=x;
+				}
+				//resultado.setText(String.valueOf(x));
+				resultado.setText(String.valueOf(x));
 			}
-			
+
 		});
 
 

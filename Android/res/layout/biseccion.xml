@@ -19,40 +19,10 @@
         android:layout_x="65dp"
         android:layout_y="10dp"
         android:ems="10"
-        android:inputType="textMultiLine" >
+        android:inputType="text|textMultiLine" >
 
         <requestFocus />
     </EditText>
-
-    <EditText
-        android:id="@+id/tol"
-        android:layout_width="84dp"
-        android:layout_height="wrap_content"
-        android:layout_x="211dp"
-        android:layout_y="66dp"
-        android:ems="10"
-        android:hint="Tol"
-        android:inputType="numberDecimal" />
-
-    <EditText
-        android:id="@+id/X1"
-        android:layout_width="84dp"
-        android:layout_height="wrap_content"
-        android:layout_x="106dp"
-        android:layout_y="66dp"
-        android:ems="10"
-        android:hint="X1"
-        android:inputType="numberDecimal" />
-
-    <EditText
-        android:id="@+id/X0"
-        android:layout_width="84dp"
-        android:layout_height="wrap_content"
-        android:layout_x="9dp"
-        android:layout_y="66dp"
-        android:ems="10"
-        android:hint="X0"
-        android:inputType="numberDecimal" />
 
     <Button
         android:id="@+id/calcular"
@@ -67,10 +37,40 @@
         android:id="@+id/resultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="48dp"
-        android:layout_y="198dp"
+        android:layout_x="44dp"
+        android:layout_y="267dp"
         android:ems="10"
         android:hint="Resultado"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal|text" />
+
+    <EditText
+        android:id="@+id/X0"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_x="10dp"
+        android:layout_y="94dp"
+        android:ems="10"
+        android:hint="X0"
+        android:inputType="numberDecimal|numberSigned|text" />
+
+    <EditText
+        android:id="@+id/tol"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_x="216dp"
+        android:layout_y="94dp"
+        android:ems="10"
+        android:hint="Tol"
+        android:inputType="numberDecimal|text" />
+
+    <EditText
+        android:id="@+id/X1"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_x="117dp"
+        android:layout_y="94dp"
+        android:ems="10"
+        android:hint="X1"
+        android:inputType="numberDecimal|text" />
 
 </AbsoluteLayout>

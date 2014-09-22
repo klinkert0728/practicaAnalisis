@@ -28,5 +28,9 @@ public class UnaVariable extends Activity {
 		startActivity(biseccion);
 	}
 	
+	public void irareglafalsa(View v){
+		Intent reglaFalsa = new Intent(this,reglafalsa.class);
+		startActivity(reglaFalsa);
+	}
 
 }

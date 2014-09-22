@@ -33,6 +33,12 @@
         </activity>
        
         <activity
+            android:name="com.example.metodosanalisis.reglafalsa"
+            android:label="reglafalsa" >
+            
+        </activity>
+        
+        <activity
             android:name="com.example.metodosanalisis.SistemasDeEcuaciones"
             android:label="@string/title_activity_sistemas_de_ecuaciones" >
         </activity>
