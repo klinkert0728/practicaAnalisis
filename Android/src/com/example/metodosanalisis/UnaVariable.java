@@ -41,5 +41,15 @@ public class UnaVariable extends Activity {
 		Intent newtonr = new Intent(this,newtonr.class);
 		startActivity(newtonr);
 	}
+	
+	public void iraSecante(View v ){
+		Intent secante = new Intent(this,Secante.class);
+		startActivity(secante);
+	}
+	
+	public void iraBusqueda(View v ){
+		Intent busqueda = new Intent(this,Secante.class); //change Secante for busqueda.class later
+		startActivity(busqueda);
+	}
 
 }

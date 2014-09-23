@@ -37,7 +37,7 @@ public class biseccion extends Activity {
 		//para que al acceder a los campos de texto no de error si estan vacíos.
 		if (Xcero.getText().toString().equals("")) {
 			x0 = 0f;
-		} else{
+		}else{
 			x0= Float.valueOf(Xcero.getText().toString());
 			if(Xuno.getText().toString().equals("")){
 				x1 = 0f;

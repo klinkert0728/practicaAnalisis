@@ -11,5 +11,6 @@
     <string name="invalid_function_exception">Función inválida</string>
     <string name="title_activity_punto_fijo">PuntoFijo</string>
     <string name="title_activity_newton_r">NewtonR</string>
+    <string name="title_activity_secante">Secante</string>
 
 </resources>

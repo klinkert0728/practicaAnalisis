@@ -28,21 +28,19 @@
         </activity>
         <activity
             android:name="com.example.metodosanalisis.UnaVariable"
-            android:label="@string/title_activity_una_variable" >
+            android:label="Una Variable" >
         </activity>
         <activity
             android:name="com.example.metodosanalisis.reglafalsa"
-            android:label="reglafalsa" >
+            android:label="Regla Falsa" >
         </activity>
-        
         <activity
             android:name="com.example.metodosanalisis.newtonr"
-            android:label="newtonr" >
+            android:label="Newton" >
         </activity>
-        
         <activity
             android:name="com.example.metodosanalisis.SistemasDeEcuaciones"
-            android:label="@string/title_activity_sistemas_de_ecuaciones" >
+            android:label="Sistemas De Ecuaciones" >
         </activity>
         <activity
             android:name="com.example.metodosanalisis.Interpolacion"
@@ -54,15 +52,19 @@
         </activity>
         <activity
             android:name="com.example.metodosanalisis.biseccion"
-            android:label="biseccion" >
+            android:label="Biseccion" >
         </activity>
         <activity
             android:name="com.example.metodosanalisis.PuntoFijo"
-            android:label="@string/title_activity_punto_fijo" >
+            android:label="Punto Fijo " >
         </activity>
         <activity
             android:name="com.example.metodosanalisis.NewtonR"
-            android:label="@string/title_activity_newton_r" >
+            android:label="Newton" >
+        </activity>
+        <activity
+            android:name="com.example.metodosanalisis.Secante"
+            android:label="@string/title_activity_secante" >
         </activity>
     </application>
 

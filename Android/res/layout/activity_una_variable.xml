@@ -8,38 +8,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#f5f5f5"
     tools:context=".UnaVariable" >
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:textSize="20dp"
-        android:textColor="#93cf5a"
-        android:background="#f5f5f5"
-        android:onClick="irabiseccion"
-        android:text="Biseccion" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:textSize="20dp"
-        android:textColor="#93cf5a"
-        android:background="#f5f5f5"
-        android:onClick="irareglafalsa"
-        android:text="Regla Falsa" />
     
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
+        android:layout_alignLeft="@+id/CalcularST"
         android:layout_below="@+id/button2"
         android:layout_marginTop="16dp"
         android:textSize="20dp"
@@ -57,6 +31,55 @@
         android:background="#f5f5f5"
         android:onClick="iraNewtonr"
         android:text="Newton-Raphson"
+        android:textColor="#93cf5a"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/iraSecante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iraNewtonr"
+        android:layout_centerHorizontal="true"
+        android:background="#f5f5f5"
+        android:onClick="iraSecante"
+        android:text="Secante"
+        android:textColor="#93cf5a"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/CalcularST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp"
+        android:background="#f5f5f5"
+        android:onClick="irabiseccion"
+        android:text="Biseccion"
+        android:textColor="#93cf5a"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CalcularST"
+        android:layout_centerHorizontal="true"
+        android:background="#f5f5f5"
+        android:onClick="irareglafalsa"
+        android:text="Regla Falsa"
+        android:textColor="#93cf5a"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+       	android:background="#f5f5f5"
+        android:onClick="iraBusqueda"
+        android:text="Busqueda Incremental"
         android:textColor="#93cf5a"
         android:textSize="20dp" />
 

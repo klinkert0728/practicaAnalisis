@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Secante" >
+
+    <EditText
+        android:id="@+id/X0ST"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="X0"
+        android:inputType="numberDecimal|text" />
+
+    <EditText
+        android:id="@+id/TolST"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/X1ST"
+        android:layout_alignBottom="@+id/X1ST"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:hint="Tol"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/ResultadoST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="Resultado"
+        android:inputType="numberDecimal|text" />
+
+    <Button
+        android:id="@+id/CalcularST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ResultadoST"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:text="Calcular" />
+
+    <EditText
+        android:id="@+id/X1ST"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/X0ST"
+        android:layout_alignBottom="@+id/X0ST"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="X1"
+        android:inputType="numberDecimal|text" />
+
+    <EditText
+        android:id="@+id/IterST"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/CalcularST"
+        android:layout_below="@+id/X1ST"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:hint="Iter"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="36dp"
+        android:text="F(x)="
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/FuncionST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView1"
+        android:layout_toRightOf="@+id/textView1"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+</RelativeLayout>
