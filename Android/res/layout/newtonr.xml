@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="21dp"
+        android:layout_y="20dp"
+        android:text="F(x)"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/funcionf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="70dp"
+        android:layout_y="20dp"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="21dp"
+        android:layout_y="84dp"
+        android:textSize="20dp"
+        android:text="G(x)" />
+
+    <EditText
+        android:id="@+id/funciong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="70dp"
+        android:layout_y="76dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/Xrn"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_x="11dp"
+        android:layout_y="138dp"
+        android:ems="10"
+        android:hint="Valor Inicial"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/tolnr"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_x="172dp"
+        android:layout_y="138dp"
+        android:ems="10"
+        android:hint="Tol" />
+
+    <EditText
+        android:id="@+id/solucionnr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="62dp"
+        android:layout_y="221dp"
+        android:ems="10"
+        android:hint="Solucion" />
+
+    <Button
+        android:id="@+id/calcularnr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="116dp"
+        android:layout_y="332dp"
+        android:onClick="calcularnr"
+        android:text="calcular" />
+
+</AbsoluteLayout>

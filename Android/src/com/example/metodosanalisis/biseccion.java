@@ -92,10 +92,12 @@ public class biseccion extends Activity {
 				//implementamos el método de bisección
 				x=xc;
 				int i =0;
-				while(eRelativo >= tols){
+				while(eRelativo !=0){
+					if(eRelativo <tols){
+						break;
+					}
 					System.out.println(x);
 					System.out.println(eRelativo+"relativo"+">"+tols);
-					temp1 = x;
 					x= (xc+xu)/2;
 					
 					
@@ -105,12 +107,12 @@ public class biseccion extends Activity {
 						xc=x;
 					}
 					eRelativo = (Math.abs(x-temp1)/x)*100;
-					/*if(piteracion ==false){
+					if(piteracion ==false){
 						eRelativo = (Math.abs(x-temp1)/x)*100;
 						temp1 =x;
-					}*/
-					//piteracion=false;
-					//temp1=x;
+					}
+					piteracion=false;
+					temp1=x;
 				}
 				//resultado.setText(String.valueOf(x));
 				resultado.setText(String.valueOf(x));

@@ -36,5 +36,10 @@ public class UnaVariable extends Activity {
 		Intent PuntoFijo = new Intent(this,PuntoFijo.class);
 		startActivity(PuntoFijo);
 	}
+	
+	public void iraNewtonr(View v ){
+		Intent newtonr = new Intent(this,newtonr.class);
+		startActivity(newtonr);
+	}
 
 }

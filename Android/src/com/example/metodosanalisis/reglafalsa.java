@@ -78,12 +78,16 @@ public class reglafalsa extends Activity  {
 						//implementamos el método de puntofijo
 						xrf=xcrf;
 						int i =0;
-						while(eRelativo >= tolsrf){
+						while(eRelativo !=0){
+							
+							if(eRelativo <tolsrf){
+								break;
+							}
 							System.out.println(xrf);
 							System.out.println(eRelativo+"relativo"+">"+tolsrf);
 							double fb = e.calculate(xurf);
 							double fa = e.calculate(xcrf);
-							temp1 = xrf;
+						
 							
 							xrf= xurf-((fb*(xcrf-xurf))/(fa-fb));
 							
@@ -94,12 +98,12 @@ public class reglafalsa extends Activity  {
 							}
 							eRelativo = (Math.abs(xrf-temp1)/xrf)*100;
 							
-							/*if(piteracion ==false){
+							if(piteracion ==false){
 								eRelativo = (Math.abs(xrf-temp1)/xrf)*100;
 								temp1 =xrf;
-							}*/
-							//piteracion=false;
-							//temp1=xrf;
+							}
+							piteracion=false;
+							temp1=xrf;
 						}
 						//resultado.setText(String.valueOf(x));
 						resultadorf.setText(String.valueOf(xrf));

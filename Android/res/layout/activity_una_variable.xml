@@ -48,5 +48,16 @@
         android:onClick="iraPuntofijo"
         android:text="Punto fijo" />
 
+    <Button
+        android:id="@+id/iraNewtonr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:background="#f5f5f5"
+        android:onClick="iraNewtonr"
+        android:text="Newton-Raphson"
+        android:textColor="#93cf5a"
+        android:textSize="20dp" />
 
 </RelativeLayout>
