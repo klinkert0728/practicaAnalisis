@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    methodsName = [[NSArray alloc]initWithObjects:@"Búsqueda Incremental",@"Bisección",@"Regula Falsi",@"Punto Fijo",@"Newton-Raphson", nil];
+    methodsName = [[NSArray alloc]initWithObjects:@"Búsqueda Incremental",@"Bisección",@"Regula Falsi",@"Punto Fijo",@"Newton-Raphson",@"Secante",@"Raices Multiples", nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -72,6 +72,12 @@
                 break;
             case 4:
                 [self performSegueWithIdentifier:@"newtonRaphsonSegue" sender:nil];
+                break;
+            case 5:
+                [self performSegueWithIdentifier:@"secantSegue" sender:nil];
+                break;
+            case 6:
+                [self performSegueWithIdentifier:@"multipleRootsSegue" sender:nil];
                 break;
             default:
                 break;

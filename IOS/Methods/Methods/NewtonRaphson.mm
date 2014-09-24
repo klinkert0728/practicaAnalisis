@@ -21,6 +21,8 @@
     tol = tolNew;
     iter = iterNEW;
     
+    [self NewtonRaphson];
+    
 }
 
 
