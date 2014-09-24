@@ -41,13 +41,24 @@
     
     if (y == 0) {
         NSLog(@"%f es raiz\n", x0);
+        
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Raiz Encontrada" message:[NSString stringWithFormat:@"%f es raiz\n", x0] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        
        // [resultados setResultados:x0 :error];
     } else {
         if (error < tol) {
             NSLog(@"%f es raiz con %e", x0, tol);
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Raiz Encontrada" message:[NSString stringWithFormat:@"%f es raiz con %e", x0, tol] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
            // [resultados setResultados:x0 :error];
         } else {
             NSLog(@"no se hallo raiz con %d iteraciones\n", iter);
+            
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"no se hallo raiz con %d iteraciones", iter] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            
+            [alert show];
+
            // [resultados setResultado:iter];
         }
         

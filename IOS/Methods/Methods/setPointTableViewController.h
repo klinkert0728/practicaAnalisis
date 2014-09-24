@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "setPoint.h"
 
-@interface setPointTableViewController : UITableViewController
+@interface setPointTableViewController : UITableViewController{
+    
+    UITextField *functionF;
+    UITextField *functionG;
+    UITextField *tolerancia;
+    UITextField *x0;
+    UITextField *iteraciones;
+}
 
 @end
