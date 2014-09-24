@@ -71,7 +71,7 @@
         android:hint="Iter"
         android:inputType="numberDecimal" >
 
-        <requestFocus />
+
     </EditText>
 
     <TextView

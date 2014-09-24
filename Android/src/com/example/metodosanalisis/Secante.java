@@ -32,7 +32,7 @@ public class Secante extends Activity {
 		f = (EditText) findViewById (R.id.FuncionST);
 		itera = (EditText) findViewById (R.id.IterST);
 		resultadoST = (EditText) findViewById (R.id.ResultadoST);
-		Button cal = (Button) findViewById(R.id.CalcularST);
+		Button calcular = (Button) findViewById(R.id.CalcularST);
 		
 		if (X0.getText().toString().equals("")) {
 			x0= 0f;
@@ -50,7 +50,7 @@ public class Secante extends Activity {
 			}
 		}
 
-		cal.setOnClickListener(new View.OnClickListener() {
+		calcular.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				double res= 0.0;
