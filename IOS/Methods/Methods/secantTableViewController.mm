@@ -1,18 +1,18 @@
 //
-//  setPointTableViewController.m
+//  secantTableViewController.m
 //  Methods
 //
-//  Created by Daniel Klinkert on 9/20/14.
+//  Created by Daniel Klinkert on 9/23/14.
 //  Copyright (c) 2014 _danielKlinkert_. All rights reserved.
 //
 
-#import "setPointTableViewController.h"
+#import "secantTableViewController.h"
 
-@interface setPointTableViewController ()
+@interface secantTableViewController ()
 
 @end
 
-@implementation setPointTableViewController
+@implementation secantTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,7 +40,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     // Return the number of rows in the section.
-    if (section == 0 ) {
+    if (section == 0) {
         return 5;
     }else{
         return 1;
@@ -51,45 +51,45 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-   CGRect field = CGRectMake(10, 10, tableView.frame.size.height, 25);
-    if (!functionF) {
-        functionF = [[UITextField alloc] initWithFrame:field];
-        [functionF setPlaceholder:@"Función F"];
-    }
-    if (!functionG) {
-        functionG= [[UITextField alloc] initWithFrame:field];
-        [functionG setPlaceholder:@"Función G"];
-    }
-    
-    if (!tolerancia) {
-        tolerancia = [[UITextField alloc] initWithFrame:field];
-        [tolerancia setPlaceholder:@"Tolerancia"];
+    CGRect field = CGRectMake(10, 10, tableView.frame.size.height, 25);
+    if (!func) {
+        func = [[UITextField alloc] initWithFrame:field];
+        [func setPlaceholder:@"Función F(x)"];
     }
     if (!x0) {
-        x0 = [[UITextField alloc] initWithFrame:field];
-        [x0 setPlaceholder:@"Valor Inicial"];
+        x0= [[UITextField alloc] initWithFrame:field];
+        [x0 setPlaceholder:@"x0"];
     }
-    if (!iteraciones) {
-        iteraciones= [[UITextField alloc] initWithFrame:field];
-        [iteraciones setPlaceholder:@"Iteraciones"];
+    
+    if (!x1) {
+        x1 = [[UITextField alloc] initWithFrame:field];
+        [x1 setPlaceholder:@"x1"];
+    }
+    if (!tol) {
+        tol = [[UITextField alloc] initWithFrame:field];
+        [tol setPlaceholder:@"Tolerancia"];
+    }
+    if (!ite) {
+        ite= [[UITextField alloc] initWithFrame:field];
+        [ite setPlaceholder:@"Iteraciones"];
     }
     
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
-                [cell addSubview:functionF];
+                [cell addSubview:func];
                 break;
             case 1:
-                [cell addSubview:functionG];
-                break;
-            case 2:
-                [cell addSubview:tolerancia];
-                break;
-            case 3:
                 [cell addSubview:x0];
                 break;
+            case 2:
+                [cell addSubview:x1];
+                break;
+            case 3:
+                [cell addSubview:tol];
+                break;
             case 4:
-                [cell addSubview:iteraciones];
+                [cell addSubview:ite];
                 break;
                 
             default:
@@ -102,15 +102,18 @@
             [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
         }
     }
+
+    
     // Configure the cell...
     
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.section == 1) {
-        if ([functionF.text isEqualToString:@""] || [functionG.text isEqualToString:@""] || [tolerancia.text isEqualToString:@""]|| [x0.text isEqualToString:@""] || [iteraciones.text isEqualToString:@""]) {
+        if ([func.text isEqualToString:@""] || [x0.text isEqualToString:@""] || [x1.text isEqualToString:@""]|| [tol.text isEqualToString:@""] || [ite.text isEqualToString:@""]) {
             
             UIAlertView * all = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Debes completar todos los campos para poder calcular el resultado" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             
@@ -119,17 +122,12 @@
             
             
             id myMethod;
-            myMethod = [setPoint new];
+            myMethod = [secant new];
             
-            [myMethod initWithFunction:functionF.text functionG:functionG.text x0:[x0.text doubleValue] iter:[iteraciones.text intValue] tol:[tolerancia.text doubleValue]];
+            [myMethod initWithFunction:func.text valorIniciar:[x0.text doubleValue] valorSgte:[x1.text doubleValue] tolerancia:[tol.text doubleValue] iteraciones:[ite.text intValue]];
             
-            
-//            NSLog(@"%@f %@g %@ x0 iter %d tol %f",functionF,functionG,x0,[iteraciones.text intValue],[tolerancia.text doubleValue]);
-            
-            //[myMethod initWithFunction:function.text valorInferior:xi.text valorSuperior:xs.text tolerancia:[tolerancia.text doubleValue] iteraciones:[nIteraciones.text intValue]];
         }
     }
-    
 }
 
 /*

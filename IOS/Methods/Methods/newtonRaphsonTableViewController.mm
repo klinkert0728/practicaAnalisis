@@ -1,23 +1,21 @@
 //
-//  methodsTableViewController.m
+//  newtonRaphsonTableViewController.m
 //  Methods
 //
-//  Created by Daniel Klinkert on 8/28/14.
+//  Created by Daniel Klinkert on 9/23/14.
 //  Copyright (c) 2014 _danielKlinkert_. All rights reserved.
 //
 
-#import "methodsTableViewController.h"
+#import "newtonRaphsonTableViewController.h"
 
-@interface methodsTableViewController ()
+@interface newtonRaphsonTableViewController ()
 
 @end
 
-@implementation methodsTableViewController
+@implementation newtonRaphsonTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    methodsName = [[NSArray alloc]initWithObjects:@"Búsqueda Incremental",@"Bisección",@"Regula Falsi",@"Punto Fijo",@"Newton-Raphson",@"Secante",@"Raices Multiples", nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -35,59 +33,98 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return 2 ;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     // Return the number of rows in the section.
-    return [methodsName count];
+    if (section == 0 ) {
+        return 5;
+    }else{
+        return 1;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
+    
+    
+    CGRect field = CGRectMake(10, 10, tableView.frame.size.height, 25);
+    if (!function) {
+        function = [[UITextField alloc] initWithFrame:field];
+        [function setPlaceholder:@"Función F(x)"];
+    }
+    if (!functionDerivate) {
+        functionDerivate= [[UITextField alloc] initWithFrame:field];
+        [functionDerivate setPlaceholder:@"F'(x)"];
+    }
+    
+    if (!tolerancia) {
+        tolerancia = [[UITextField alloc] initWithFrame:field];
+        [tolerancia setPlaceholder:@"Tolerancia"];
+    }
+    if (!x0) {
+        x0 = [[UITextField alloc] initWithFrame:field];
+        [x0 setPlaceholder:@"Valor Inicial"];
+    }
+    if (!iteraciones) {
+        iteraciones= [[UITextField alloc] initWithFrame:field];
+        [iteraciones setPlaceholder:@"Iteraciones"];
+    }
+    
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+                [cell addSubview:function];
+                break;
+            case 1:
+                [cell addSubview:functionDerivate];
+                break;
+            case 2:
+                [cell addSubview:tolerancia];
+                break;
+            case 3:
+                [cell addSubview:x0];
+                break;
+            case 4:
+                [cell addSubview:iteraciones];
+                break;
+                
+            default:
+                break;
+        }
+    }else if (indexPath.section ==1){
+        
+        if (indexPath.row == 0) {
+            [cell.textLabel setText:@"Calcular"];
+            [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
+        }
+    }
     // Configure the cell...
-    [cell.textLabel setText:[methodsName objectAtIndex:indexPath.row]];
     
     return cell;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0){
-        switch (indexPath.row) {
-            case 0:
-                [self performSegueWithIdentifier:@"incrementalSegue" sender:nil];
-                break;
-            case 1:
-                [self performSegueWithIdentifier:@"bisectionSegue" sender:nil];
-                break;
-            case 2:
-                [self performSegueWithIdentifier:@"regulaFalsiSegue" sender:nil];
-                break;
-            case 3:
-                [self performSegueWithIdentifier:@"setPointSegue" sender:nil];
-                break;
-            case 4:
-                [self performSegueWithIdentifier:@"newtonRaphsonSegue" sender:nil];
-                break;
-            case 5:
-                [self performSegueWithIdentifier:@"secantSegue" sender:nil];
-                break;
-            case 6:
-                [self performSegueWithIdentifier:@"multipleRootsSegue" sender:nil];
-                break;
-            default:
-                break;
+    if (indexPath.section == 1) {
+        if ([function.text isEqualToString:@""] || [functionDerivate.text isEqualToString:@""] || [tolerancia.text isEqualToString:@""]|| [x0.text isEqualToString:@""] || [iteraciones.text isEqualToString:@""]) {
+            
+            UIAlertView * all = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Debes completar todos los campos para poder calcular el resultado" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            
+            [all show];
+        }else{
+            
+            
+            id myMethod;
+           myMethod = [NewtonRaphson new];
+            
+            [myMethod initWithFunction:function.text functionDerivate:functionDerivate.text valorInicial:[x0.text doubleValue] tolerancia:[tolerancia.text doubleValue] iteraciones:[iteraciones.text intValue]];
+        
         }
     }
 }
-
-
-
-
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

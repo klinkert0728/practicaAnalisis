@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #include "evaluador.h"
+#import <UIKit/UIKit.h>
 
 @interface setPoint : NSObject{
     
