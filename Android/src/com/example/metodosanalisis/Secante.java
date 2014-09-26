@@ -32,7 +32,7 @@ public class Secante extends Activity {
 		f = (EditText) findViewById (R.id.FuncionST);
 		itera = (EditText) findViewById (R.id.IterST);
 		resultadoST = (EditText) findViewById (R.id.ResultadoST);
-		Button calcular = (Button) findViewById(R.id.CalcularST);
+		Button Calcularcito = (Button) findViewById (R.id.CalculaST);
 		
 		if (X0.getText().toString().equals("")) {
 			x0= 0f;
@@ -50,9 +50,12 @@ public class Secante extends Activity {
 			}
 		}
 
-		calcular.setOnClickListener(new View.OnClickListener() {
+
+		Calcularcito.setOnClickListener(new View.OnClickListener() {
+			
 			@Override
 			public void onClick(View v) {
+				// TODO Auto-generated method stub
 				double res= 0.0;
 				//obtenemos cada valor de los campos.
 				if(!itera.getText().toString().equals("")){
@@ -85,22 +88,21 @@ public class Secante extends Activity {
 				if(fx0 == 0){
 					resultadoST.setText(String.valueOf(xcST));
 				}else{
+					double fx1 = e.calculate(xuST);
 					int cont =0;
 					double error = tolsST + 1;
-					double fx1 = e.calculate(xuST);
 					double den = fx1 - fx0;
 					double x2;
-					while(cont < iter && error > tolsST && fx1 != 0 && den != 0){
-						x2 = xuST -((fx1*(xuST-xcST))/den);
+					while(error > tolsST &&  fx1 != 0 && den != 0 && cont < iter){
+						x2 = xuST -(fx1*(xuST-xcST)/den);
 						error = ((Math.abs(x2 - xuST))/x2)*100;
 						xcST = xuST;
-						fx0 = fx1;
+						fx0 = e.calculate(xuST);
 						xuST = x2;
 						fx1 = e.calculate(xuST);
 						den = fx1 - fx0;
 						cont++;
 					}
-					
 					if(fx1 == 0){
 						resultadoST.setText(String.valueOf(xuST));
 					}else{
@@ -113,14 +115,11 @@ public class Secante extends Activity {
 								resultadoST.setText("no es suficiente con "+ iter +" iteraciones");
 							}
 						}
-					}
-				
+					}	
 				}
 			}
-
 		});
+
 	}
-
-
 
 }

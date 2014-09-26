@@ -35,11 +35,11 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int CalcularST=0x7f0a0011;
-        public static final int FuncionST=0x7f0a0013;
+        public static final int CalculaST=0x7f0a0013;
+        public static final int FuncionST=0x7f0a0012;
         public static final int GPF=0x7f0a000a;
         public static final int Interpolacion=0x7f0a0003;
-        public static final int IterST=0x7f0a0012;
+        public static final int IterST=0x7f0a0011;
         public static final int IteraPF=0x7f0a000c;
         public static final int ResultadoST=0x7f0a0010;
         public static final int SistEcuaciones=0x7f0a0002;

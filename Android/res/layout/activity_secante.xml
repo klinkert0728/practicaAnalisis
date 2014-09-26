@@ -40,15 +40,6 @@
         android:hint="Resultado"
         android:inputType="numberDecimal|text" />
 
-    <Button
-        android:id="@+id/CalcularST"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ResultadoST"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp"
-        android:text="Calcular" />
-
     <EditText
         android:id="@+id/X1ST"
         android:layout_width="84dp"
@@ -64,13 +55,12 @@
         android:id="@+id/IterST"
         android:layout_width="84dp"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/CalcularST"
         android:layout_below="@+id/X1ST"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:ems="10"
         android:hint="Iter"
         android:inputType="numberDecimal" >
-
 
     </EditText>
 
@@ -91,5 +81,15 @@
         android:layout_toRightOf="@+id/textView1"
         android:ems="10"
         android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/CalculaST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ResultadoST"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:onClick="CalcularST"
+        android:text="Calcular" />
 
 </RelativeLayout>
