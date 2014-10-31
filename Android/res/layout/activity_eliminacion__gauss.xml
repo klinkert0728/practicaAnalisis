@@ -35,22 +35,21 @@
         android:text="Pivoteo Parcial" />
 
     <CheckBox
-        android:id="@+id/PivoteoTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/PivoteoParcial"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="34dp"
-        android:text="Pivoteo Total" />
-
-    <CheckBox
         android:id="@+id/PivoteoEscalonado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/PivoteoParcial"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="PivoteoEscalonado" 
+        android:text="Pivoteo Escalonado" 
         />
+
+    <CheckBox
+        android:id="@+id/PivoteoTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/PivoteoParcial"
+        android:layout_alignParentRight="true"
+        android:text="Pivoteo Total" />
 
 </RelativeLayout>
