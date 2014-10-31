@@ -6,34 +6,6 @@
     tools:context="com.example.metodosanalisis.Eliminacion_Gauss"
     tools:ignore="MergeRootFrame" >
 
-    <RadioButton
-        android:id="@+id/SinPivoteo"
-        android:layout_width="99dp"
-        android:layout_height="47dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/PivoteoTotal"
-        android:layout_marginLeft="14dp"
-        android:text="Sin Pivoteo" />
-
-    <RadioButton
-        android:id="@+id/PivoteoTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/PivoteoParcial"
-        android:layout_marginTop="16dp"
-        android:text="Pivoteo Total" />
-
-    <RadioButton
-        android:id="@+id/PivoteoParcial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/SinPivoteo"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="62dp"
-        android:layout_marginTop="32dp"
-        android:text="Pivoteo Parcial" />
-
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
@@ -41,8 +13,44 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="28dp"
-        android:text="Calcular" 
-        android:onClick="calcular"/>
+        android:onClick="calcular"
+        android:text="Calcular" />
+
+    <CheckBox
+        android:id="@+id/SinPivoteo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="Sin Pivoteo" />
+
+    <CheckBox
+        android:id="@+id/PivoteoParcial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SinPivoteo"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/button1"
+        android:text="Pivoteo Parcial" />
+
+    <CheckBox
+        android:id="@+id/PivoteoTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/PivoteoParcial"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="34dp"
+        android:text="Pivoteo Total" />
+
+    <CheckBox
+        android:id="@+id/PivoteoEscalonado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PivoteoParcial"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="PivoteoEscalonado" 
+        />
 
 </RelativeLayout>
-

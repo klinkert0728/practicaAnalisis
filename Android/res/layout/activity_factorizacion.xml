@@ -1,8 +1,49 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.metodosanalisis.Factorizacion"
-    tools:ignore="MergeRootFrame" />
+    tools:ignore="MergeRootFrame" >
+
+    <CheckBox
+        android:id="@+id/Doolittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBox1"
+        android:layout_below="@+id/checkBox1"
+        android:layout_marginTop="25dp"
+        android:text="Doolittle" />
+
+    <CheckBox
+        android:id="@+id/Cholesky"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Crout"
+        android:layout_alignBottom="@+id/Crout"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="14dp"
+        android:text="Cholesky" />
+
+    <CheckBox
+        android:id="@+id/Crout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Doolittle"
+        android:layout_alignBottom="@+id/Doolittle"
+        android:layout_centerHorizontal="true"
+        android:text="Crout" />
+
+    <Button
+        android:id="@+id/Calcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/Crout"
+        android:layout_marginBottom="20dp"
+        android:text="Calcular" 
+        android:onClick="calcular"
+        />
+
+</RelativeLayout>
 
