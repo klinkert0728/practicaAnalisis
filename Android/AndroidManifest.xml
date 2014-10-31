@@ -66,6 +66,22 @@
             android:name="com.example.metodosanalisis.Secante"
             android:label="@string/title_activity_secante" >
         </activity>
+        <activity
+            android:name="com.example.metodosanalisis.Eliminacion_Gauss"
+            android:label="@string/title_activity_eliminacion__gauss" >
+        </activity>
+        <activity
+            android:name="com.example.metodosanalisis.Factorizacion"
+            android:label="@string/title_activity_factorizacion" >
+        </activity>
+        <activity
+            android:name="com.example.metodosanalisis.Metodos_Iterativos"
+            android:label="@string/title_activity_metodos__iterativos" >
+        </activity>
+        <activity
+            android:name="com.example.metodosanalisis.Pivoteo_Escalonado"
+            android:label="@string/title_activity_pivoteo__escalonado" >
+        </activity>
     </application>
 
 </manifest>

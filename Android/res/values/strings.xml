@@ -12,5 +12,9 @@
     <string name="title_activity_punto_fijo">PuntoFijo</string>
     <string name="title_activity_newton_r">NewtonR</string>
     <string name="title_activity_secante">Secante</string>
+    <string name="title_activity_eliminacion__gauss">Eliminacion_Gauss</string>
+    <string name="title_activity_factorizacion">Factorizacion</string>
+    <string name="title_activity_metodos__iterativos">Metodos_Iterativos</string>
+    <string name="title_activity_pivoteo__escalonado">Pivoteo_Escalonado</string>
 
 </resources>
