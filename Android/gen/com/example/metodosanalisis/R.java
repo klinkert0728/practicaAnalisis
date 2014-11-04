@@ -44,12 +44,12 @@ public final class R {
         public static final int Factorizacion=0x7f0a0024;
         public static final int FuncionST=0x7f0a0020;
         public static final int GPF=0x7f0a0018;
-        public static final int GaussSeidel=0x7f0a0010;
+        public static final int GaussSeidel=0x7f0a0011;
         public static final int Interpolacion=0x7f0a000e;
         public static final int IterST=0x7f0a001f;
         public static final int IteraPF=0x7f0a001a;
         public static final int Iterativos=0x7f0a0022;
-        public static final int Jacobi=0x7f0a0011;
+        public static final int Jacobi=0x7f0a0012;
         public static final int PivoteoEscalonado=0x7f0a0004;
         public static final int PivoteoParcial=0x7f0a0003;
         public static final int PivoteoTotal=0x7f0a0005;
@@ -71,7 +71,7 @@ public final class R {
         public static final int button2=0x7f0a0026;
         public static final int button3=0x7f0a000f;
         public static final int button4=0x7f0a0025;
-        public static final int calcular=0x7f0a0012;
+        public static final int calcular=0x7f0a0010;
         public static final int calcularPF=0x7f0a0016;
         public static final int calcularnr=0x7f0a0035;
         public static final int calcularrf=0x7f0a003b;
