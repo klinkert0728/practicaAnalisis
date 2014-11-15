@@ -10,71 +10,47 @@
         android:gravity="center_horizontal"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/initial_values_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="valor inicial"
-            android:textSize="14sp" />
-
-        <LinearLayout
-            android:id="@+id/input_layout"
+        <EditText
+            android:id="@+id/valorInicial"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ems="10"
+            android:hint="Valor Inicial"
+            android:inputType="number"
+            android:singleLine="true" />
 
-            <HorizontalScrollView
-                android:id="@+id/horizontal_scroll_initial_values"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/iteraciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Iteraciones"
+            android:singleLine="true" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal" >
+        <EditText
+            android:id="@+id/tolerancia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ems="10"
+            android:hint="Tolerancia"
+            android:singleLine="true" />
 
-                    <TableLayout
-                        android:id="@+id/input_initial_values"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" >
-                    </TableLayout>
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <EditText
-                android:id="@+id/input_max_iterations"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:ems="10"
-                android:hint="Iteraciones"
-                android:inputType="number"
-                android:singleLine="true" >
-            </EditText>
-
-            <EditText
-                android:id="@+id/input_tol"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:ems="10"
-                android:hint="tolerancia"
-                android:singleLine="true" >
-            </EditText>
-
-            <EditText
-                android:id="@+id/input_alpha"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:ems="10"
-                android:hint="alpha"
-                android:singleLine="true" >
-            </EditText>
-
-            <Button
+        <EditText
+            android:id="@+id/alpha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ems="10"
+            android:hint="Alpha"
+            android:inputType="number"
+            android:singleLine="true" />
+        
+        
+        <Button
                 android:id="@+id/continue_button"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
@@ -82,7 +58,8 @@
                 android:layout_margin="15dp"
                 android:onClick="calcular"
                 android:text="@string/calcular" />
-        </LinearLayout>
+
+     
     </LinearLayout>
 
 </ScrollView>

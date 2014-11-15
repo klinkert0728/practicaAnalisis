@@ -1,6 +1,7 @@
 package com.example.metodosanalisis;
 
 import java.util.Arrays;
+import com.example.metodosanalisis.SetUpIterativeMethods;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -94,18 +95,51 @@ public class Metodos_Iterativos extends Activity {
 		}
 	}
 	
+	public double[][] getValuesOfMatrix() {
+		double[][] matrix = new double[sizeOfMatrix][sizeOfMatrix];
+
+		for (int i = 0; i < sizeOfMatrix; i++) {
+
+			for (int j = 0; j < sizeOfMatrix; j++) {
+
+				matrix[i][j] = Double.parseDouble(editMatrix[i][j].getText()
+						.toString());
+			}
+		}
+
+		return matrix;
+
+	}
 	
+	public double[] getValuesOfVector(){
+		
+		double[] vector = new double [sizeOfMatrix];
+		for (int i = 0 ; i < sizeOfMatrix ; i ++){
+			
+			vector[i] = Double.parseDouble(editBArray[i].getText().toString());
+			
+		}
+		
+		return vector;
+		
+		
+	}
+
 
 	public void calcular(View v) {
 
 		if (jacobi.isChecked() && !gaussSeidel.isChecked()) {
 
 			Intent jacobi = new Intent(this,SetUpIterativeMethods.class);
+			jacobi.putExtra("nextMethod",2);
 			startActivity(jacobi);
 
 		} else if (gaussSeidel.isChecked() && !jacobi.isChecked()) {
 			
 			Intent gauss = new Intent(this, SetUpIterativeMethods.class);
+			gauss.putExtra("nextMethod", 1);
+			SetUpIterativeMethods.matrix = this.getValuesOfMatrix();
+			SetUpIterativeMethods.b = this.getValuesOfVector();
 			startActivity(gauss);
 		} else {
 
