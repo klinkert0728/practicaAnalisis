@@ -19,5 +19,10 @@
     <string name="title_activity_select_size_of_matrix">SelectSizeOfMatrix</string>
     <string name="numeroDeIngcognitas">Numero de incógnitas</string>
     <string name="continuar">Continuar</string>
+    <string name="calcular">Calcular</string>
+    <string name="SinPivoteo">Sin Pivoteo</string>
+    <string name="PivoteoParcial">Pivoteo Parcial</string>
+    <string name="PivoteoTotal">Pivoteo Total</string>
+    <string name="PivoteoEscalonado">Pivoteo Escalonado</string>
 
 </resources>

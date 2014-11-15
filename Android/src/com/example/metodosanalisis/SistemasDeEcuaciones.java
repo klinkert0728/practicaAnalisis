@@ -31,7 +31,7 @@ public class SistemasDeEcuaciones extends Activity {
 	
 	public void factorizacion(View v){
 		Intent factorizacion = new Intent(SistemasDeEcuaciones.this,SelectSizeOfMatrix.class );
-		factorizacion.putExtra("nextMethod", 3);
+		factorizacion.putExtra("nextMethod", 2);
 		startActivity(factorizacion);
 	}
 	

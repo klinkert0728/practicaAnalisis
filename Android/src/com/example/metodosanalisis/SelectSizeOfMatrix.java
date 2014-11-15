@@ -3,6 +3,7 @@ package com.example.metodosanalisis;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,21 +42,22 @@ public class SelectSizeOfMatrix extends Activity {
 		case 1:
 			nextMethod = new Intent(this, Eliminacion_Gauss.class);
 			nextMethod.putExtra("size", matrixSize);
-			startActivity(nextMethod);
 			break;
 		case 2:
 			nextMethod = new Intent(this, Factorizacion.class);
 			nextMethod.putExtra("size", matrixSize);
-			startActivity(nextMethod);
+			Log.i("no", "no");
 			break;
 		case 3:
 			nextMethod = new Intent(this, Metodos_Iterativos.class);
 			nextMethod.putExtra("size", matrixSize);
-			startActivity(nextMethod);
+			Log.i("si", "si");
 			break;
 		default:
 			break;
 		}
+		
+		startActivity(nextMethod);
 
 	}
 }

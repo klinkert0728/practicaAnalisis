@@ -7,7 +7,7 @@
     tools:ignore="MergeRootFrame" >
 
     <LinearLayout
-        android:id="@+id/caca"
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
@@ -16,31 +16,32 @@
             android:id="@+id/SinPivoteo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sin Pivoteo" />
+            android:text="@string/SinPivoteo" />
 
         <CheckBox
             android:id="@+id/PivoteoParcial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pivoteo Parcial" />
+            android:text="@string/PivoteoParcial" />
 
         <CheckBox
             android:id="@+id/PivoteoEscalonado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pivoteo Escalonado" />
+            android:text="@string/PivoteoEscalonado" />
 
         <CheckBox
             android:id="@+id/PivoteoTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pivoteo Total" />
+            android:text="@string/PivoteoTotal" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" 
-            android:gravity="center">
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="vertical" >
 
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView1"
@@ -61,12 +62,15 @@
             </HorizontalScrollView>
         </LinearLayout>
 
+
         <Button
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:onClick="calcular"
-            android:text="Calcular" />
+            android:layout_marginLeft="100dp"
+            android:text="@string/calcular" />
     </LinearLayout>
 
 </ScrollView>
