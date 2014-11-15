@@ -3,6 +3,7 @@ package com.example.metodosanalisis;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.hardware.Camera.Size;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -23,18 +24,20 @@ public class SistemasDeEcuaciones extends Activity {
 	}
 	
 	public void gauss(View v){
-		Log.i("marica", "marica");
-		Intent gauss = new Intent(SistemasDeEcuaciones.this, Eliminacion_Gauss.class);
+		Intent gauss = new Intent(SistemasDeEcuaciones.this, SelectSizeOfMatrix.class);
+		gauss.putExtra("nextMethod", 1);
 		startActivity(gauss);
 	}
 	
 	public void factorizacion(View v){
-		Intent factorizacion = new Intent(SistemasDeEcuaciones.this,Factorizacion.class );
+		Intent factorizacion = new Intent(SistemasDeEcuaciones.this,SelectSizeOfMatrix.class );
+		factorizacion.putExtra("nextMethod", 3);
 		startActivity(factorizacion);
 	}
 	
 	public void iterativos(View v){
-		Intent iterativos = new Intent(SistemasDeEcuaciones.this, Metodos_Iterativos.class);
+		Intent iterativos = new Intent(SistemasDeEcuaciones.this, SelectSizeOfMatrix.class);
+		iterativos.putExtra("nextMethod", 3);
 		startActivity(iterativos);
 	}
 

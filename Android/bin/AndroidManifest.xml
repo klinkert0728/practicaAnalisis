@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.metodosanalisis.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,64 +23,68 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.SettingsActivity"
+            android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.UnaVariable"
+            android:name=".UnaVariable"
             android:label="Una Variable" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.reglafalsa"
+            android:name=".reglafalsa"
             android:label="Regla Falsa" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.newtonr"
+            android:name=".newtonr"
             android:label="Newton" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.SistemasDeEcuaciones"
+            android:name=".SistemasDeEcuaciones"
             android:label="Sistemas De Ecuaciones" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.Interpolacion"
+            android:name=".Interpolacion"
             android:label="@string/title_activity_interpolacion" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.InterpolacionIntegracion"
+            android:name=".InterpolacionIntegracion"
             android:label="@string/title_activity_interpolacion_integracion" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.biseccion"
+            android:name=".biseccion"
             android:label="Biseccion" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.PuntoFijo"
+            android:name=".PuntoFijo"
             android:label="Punto Fijo " >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.NewtonR"
+            android:name=".NewtonR"
             android:label="Newton" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.Secante"
+            android:name=".Secante"
             android:label="@string/title_activity_secante" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.Eliminacion_Gauss"
+            android:name=".Eliminacion_Gauss"
             android:label="@string/title_activity_eliminacion__gauss" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.Factorizacion"
+            android:name=".Factorizacion"
             android:label="@string/title_activity_factorizacion" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.Metodos_Iterativos"
+            android:name=".Metodos_Iterativos"
             android:label="@string/title_activity_metodos__iterativos" >
         </activity>
         <activity
-            android:name="com.example.metodosanalisis.Pivoteo_Escalonado"
+            android:name=".Pivoteo_Escalonado"
             android:label="@string/title_activity_pivoteo__escalonado" >
+        </activity>
+        <activity
+            android:name=".SelectSizeOfMatrix"
+            android:label="@string/title_activity_select_size_of_matrix" >
         </activity>
     </application>
 

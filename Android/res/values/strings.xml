@@ -16,5 +16,8 @@
     <string name="title_activity_factorizacion">Factorizacion</string>
     <string name="title_activity_metodos__iterativos">Metodos_Iterativos</string>
     <string name="title_activity_pivoteo__escalonado">Pivoteo_Escalonado</string>
+    <string name="title_activity_select_size_of_matrix">SelectSizeOfMatrix</string>
+    <string name="numeroDeIngcognitas">Numero de incógnitas</string>
+    <string name="continuar">Continuar</string>
 
 </resources>
