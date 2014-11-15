@@ -24,5 +24,6 @@
     <string name="PivoteoParcial">Pivoteo Parcial</string>
     <string name="PivoteoTotal">Pivoteo Total</string>
     <string name="PivoteoEscalonado">Pivoteo Escalonado</string>
+    <string name="title_activity_set_up_iterative_methods">SetUpIterativeMethods</string>
 
 </resources>

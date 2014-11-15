@@ -86,6 +86,10 @@
             android:name=".SelectSizeOfMatrix"
             android:label="@string/title_activity_select_size_of_matrix" >
         </activity>
+        <activity
+            android:name=".SetUpIterativeMethods"
+            android:label="@string/title_activity_set_up_iterative_methods" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
@@ -6,34 +6,93 @@
     tools:context="com.example.metodosanalisis.Metodos_Iterativos"
     tools:ignore="MergeRootFrame" >
 
-    <Button
-        android:id="@+id/calcular"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="47dp"
-        android:text="Calcular" 
-        android:onClick="calcular"/>
+        android:orientation="vertical" >
 
-    <CheckBox
-        android:id="@+id/GaussSeidel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Jacobi"
-        android:layout_alignBottom="@+id/Jacobi"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="28dp"
-        android:text="GaussSeildel" />
+        <LinearLayout
+            android:id="@+id/HorizontalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
-    <CheckBox
-        android:id="@+id/Jacobi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="18dp"
-        android:layout_toRightOf="@+id/calcular"
-        android:text="Jacobi" />
+            <CheckBox
+                android:id="@+id/GaussSeidel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+				android:layout_marginLeft="40dp"
+                android:text="GaussSeildel" />
 
-</RelativeLayout>
+            <CheckBox
+                android:id="@+id/Jacobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+   				android:layout_marginLeft="50dp"
+                android:text="Jacobi" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <TableLayout
+                        android:id="@+id/tableLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" >
+                    </TableLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <TableLayout
+                        android:id="@+id/vectorLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" >
+                    </TableLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/calcular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:onClick="calcular"
+            android:text="@string/calcular" />
+    </LinearLayout>
+
+</ScrollView>
