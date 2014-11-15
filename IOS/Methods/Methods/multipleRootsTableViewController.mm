@@ -34,24 +34,107 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     // Return the number of sections.
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     // Return the number of rows in the section.
-    return 0;
+    if (section == 0) {
+        return 6;
+    }else{
+        return 1;
+    }
+ 
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    CGRect field = CGRectMake(0, 0, cell.bounds.size.width, cell.bounds.size.height);
+    
+    if (!function){
+        function = [[UITextField alloc] initWithFrame:field];
+        [function setPlaceholder:@"Funcion"];
+        
+        
+    }
+    if (!firstDerivateFunction) {
+        firstDerivateFunction = [[UITextField alloc] initWithFrame:field];
+        [firstDerivateFunction setPlaceholder:@"Primera derivada"];
+        
+    }
+    if (!secondDerivateFunction) {
+        secondDerivateFunction = [[UITextField alloc] initWithFrame:field];
+        [secondDerivateFunction setPlaceholder:@"Segunda derivada"];
+    }
+    if (!inicialValue) {
+        inicialValue = [[UITextField alloc]initWithFrame:field];
+        [inicialValue setPlaceholder:@"Valor inicial"];
+        
+    }
+    if (!tolerance) {
+        tolerance = [[UITextField alloc] initWithFrame:field];
+        [tolerance setPlaceholder:@"Tolerancia"];
+    }
+    if (!numberOfIterations) {
+        numberOfIterations = [[UITextField alloc] initWithFrame:field];
+        [numberOfIterations setPlaceholder:@"Número de iteraciones"];
+    }
+    
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+                [cell addSubview:function];
+                break;
+            case 1:
+                [cell addSubview:firstDerivateFunction];
+                break;
+            case 2:
+                [cell addSubview:secondDerivateFunction];
+                break;
+            case 3:
+                [cell addSubview:inicialValue];
+                break;
+            case 4:
+                [cell addSubview:tolerance];
+                break;
+            case 5:
+                [cell addSubview:numberOfIterations];
+                break;
+        
+            default:
+                break;
+        }
+
+        
+    }else if (indexPath.section == 1){
+        
+        [cell.textLabel setText:@"Calcular"];
+        [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
+        
+        
+    }
+        // Configure the cell...
     
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    
+    if (indexPath.section == 1) {
+        
+        id myMethod;
+        myMethod = [multipleRoots new];
+        
+        [myMethod initWithFunction:function.text functionFirstDerivate:firstDerivateFunction.text functionSecondDerivate:secondDerivateFunction.text valorInicialMultiplesRaices:inicialValue.text.doubleValue tolerancia:tolerance.text.doubleValue iteraciones:numberOfIterations.text.intValue];
+        
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

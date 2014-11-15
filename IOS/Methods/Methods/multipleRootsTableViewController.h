@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "multipleRoots.h"
 
-@interface multipleRootsTableViewController : UITableViewController
+@interface multipleRootsTableViewController : UITableViewController{
+    
+    UITextField *function;
+    UITextField *firstDerivateFunction;
+    UITextField *secondDerivateFunction;
+    UITextField *inicialValue;
+    UITextField *tolerance;
+    UITextField *numberOfIterations;
+}
 
 @end
