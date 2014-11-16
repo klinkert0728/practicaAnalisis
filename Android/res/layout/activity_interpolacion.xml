@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,10 +7,88 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Interpolacion" >
+    
+    
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+        
+        
+        <CheckBox 
+            android:id="@+id/Newton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Newton DD"/>
+           <CheckBox 
+            android:id="@+id/Lagrange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lagrange"/>
+              <CheckBox 
+            android:id="@+id/Neville"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Neville"/>
 
-</RelativeLayout>
+        <LinearLayout
+            android:id="@+id/input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal_scroll_initial_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TableLayout
+                        android:id="@+id/xPoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp" >
+                    </TableLayout>
+
+                    <HorizontalScrollView
+                        android:id="@+id/horizontalYpoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" >
+
+                            <TableLayout
+                                android:id="@+id/yPoint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="15dp" >
+                            </TableLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+        <EditText android:id="@+id/value"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:hint="F(x)"/>
+        <Button 
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="calcular"
+            android:onClick="calcular"/>
+    </LinearLayout>
+
+</ScrollView>

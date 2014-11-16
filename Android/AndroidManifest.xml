@@ -90,6 +90,18 @@
             android:name=".SetUpIterativeMethods"
             android:label="@string/title_activity_set_up_iterative_methods" >
         </activity>
+        <activity
+            android:name=".SelectNumberOfPoints"
+            android:label="@string/title_activity_select_number_of_points" >
+        </activity>
+        <activity
+            android:name=".SolucionInterpolacion"
+            android:label="@string/title_activity_solucion_interpolacion" >
+        </activity>
+        <activity
+            android:name=".SolucionIntegracion"
+            android:label="@string/title_activity_solucion_integracion" >
+        </activity>
     </application>
 
 </manifest>

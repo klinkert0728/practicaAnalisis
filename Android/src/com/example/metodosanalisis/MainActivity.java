@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
 		startActivity(IngresarEcuaciones);
 	}
 	public void Interp(View v){
-		Intent IngresarInterp = new Intent(this,Interpolacion.class);
+		Intent IngresarInterp = new Intent(this,SelectNumberOfPoints.class);
 		startActivity(IngresarInterp);
 	}
 	public void Integ(View v){

@@ -5,17 +5,27 @@ import java.util.Arrays;
 import android.R.integer;
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 
 public class SetUpIterativeMethods extends Activity {
 
 	public static double[][] matrix;
 	public static double[] b;
+	double[] inicialValues;
 	int method;
+
+	TableLayout tableView;
+	int sizeOfMatrix;
+	EditText[] editVector;
+
 	EditText valorInicial;
 	EditText iteraciones;
 	EditText tolerancia;
@@ -25,11 +35,57 @@ public class SetUpIterativeMethods extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_set_up_iterative_methods);
-		valorInicial = (EditText)findViewById(R.id.valorInicial);
-		iteraciones	= (EditText)findViewById(R.id.iteraciones);
-		tolerancia	= (EditText)findViewById(R.id.tolerancia);
-		alpha	=	(EditText)findViewById(R.id.alpha);
-		Log.i("matiriz", Integer.toString(matrix.length));
+		iteraciones = (EditText) findViewById(R.id.iteraciones);
+		tolerancia = (EditText) findViewById(R.id.tolerancia);
+		method = this.getIntent().getExtras().getInt("nextMethod");
+		alpha = (EditText) findViewById(R.id.alpha);
+
+		editVector = new EditText[matrix.length];
+		tableView = (TableLayout) findViewById(R.id.tableLayout);
+
+		// sizeOfMatrix = matrix.length;
+		this.fillVector(matrix.length, tableView);
+
+		System.out.println("todo");
+
+	}
+
+	public double[] getValuesOfVector() {
+
+		double[] vector = new double[matrix.length];
+		for (int i = 0; i < matrix.length; i++) {
+
+			vector[i] = Double.parseDouble(editVector[i].getText().toString());
+
+		}
+
+		return vector;
+
+	}
+
+	private void fillVector(final int n, TableLayout table) {
+		table.removeAllViews();
+		TableRow row = new TableRow(this);
+		row.setLayoutParams(new TableRow.LayoutParams(
+				TableRow.LayoutParams.WRAP_CONTENT,
+				TableRow.LayoutParams.WRAP_CONTENT));
+		for (int i = 0; i < n; i++) {
+			editVector[i] = new EditText(this);
+
+			editVector[i].setInputType(InputType.TYPE_CLASS_NUMBER
+					| InputType.TYPE_NUMBER_FLAG_DECIMAL
+					| InputType.TYPE_NUMBER_FLAG_SIGNED);
+			editVector[i].setLayoutParams(new TableRow.LayoutParams(
+					TableRow.LayoutParams.WRAP_CONTENT,
+					TableRow.LayoutParams.WRAP_CONTENT));
+
+			// edit.setText(Double.toString(editBArray[i]));
+			editVector[i].setHint("X" + i);
+
+			row.addView(editVector[i]);
+		}
+		table.addView(row);
+
 	}
 
 	@Override
@@ -52,21 +108,45 @@ public class SetUpIterativeMethods extends Activity {
 	}
 
 	public void calcular(View v) {
+		System.out.println("Hola");
+		inicialValues = this.getValuesOfVector();
+		System.out.println("InicialValues OK");
+
+		double tol = Double.parseDouble(tolerancia.getText().toString());
+		System.out.println("Tol OK");
+
+		int numberOfIteration = Integer.parseInt(iteraciones.getText()
+				.toString());
+		System.out.println("iteratios OK");
+
+		double realAlpha;
+
+		if (alpha.getText().toString() == "") {
+			realAlpha = 0.0;
+		} else {
+			realAlpha = Double.parseDouble(alpha.getText().toString());
+		}
+		System.out.println("vvvv OK");
+		for (int i = 0 ; i< inicialValues.length; i++){
+			System.out.println(inicialValues[i]);
+		}
 		switch (method) {
 		case 1:
-			//.gaussSeidel(matrix, b, 5, Integer.parseInt(valorInicial.getText().toString()), Integer.parseInt(tolerancia.getText().toString()), Integer.parseInt(alpha.getText().toString()));
+			this.gaussSeidel(matrix, b, sizeOfMatrix, inicialValues,
+					numberOfIteration, tol, realAlpha);
+			System.out.println("marica");
 			break;
 		case 2:
+			System.out.println("jacoby");
+			this.jacobi(matrix, b, sizeOfMatrix, inicialValues,
+					numberOfIteration, tol, realAlpha);
 			break;
 		default:
 			break;
 		}
 		Log.i("Calcular", "calc");
 	}
-	
-	
-	
-	
+
 	public static void jacobi(double[][] matrix, double[] b, int n,
 			double[] x0, int iteraciones, double tolerancia, double alpha) {
 		int contador = 1;
@@ -205,6 +285,5 @@ public class SetUpIterativeMethods extends Activity {
 			System.out.println("Fracaso en " + iteraciones + " iteraciones.");
 		}
 	}
-	
-	
+
 }

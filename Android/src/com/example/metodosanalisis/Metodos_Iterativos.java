@@ -127,19 +127,19 @@ public class Metodos_Iterativos extends Activity {
 
 
 	public void calcular(View v) {
-
+		SetUpIterativeMethods.matrix = this.getValuesOfMatrix();
+		SetUpIterativeMethods.b = this.getValuesOfVector();
 		if (jacobi.isChecked() && !gaussSeidel.isChecked()) {
 
 			Intent jacobi = new Intent(this,SetUpIterativeMethods.class);
 			jacobi.putExtra("nextMethod",2);
+			
 			startActivity(jacobi);
 
 		} else if (gaussSeidel.isChecked() && !jacobi.isChecked()) {
 			
 			Intent gauss = new Intent(this, SetUpIterativeMethods.class);
 			gauss.putExtra("nextMethod", 1);
-			SetUpIterativeMethods.matrix = this.getValuesOfMatrix();
-			SetUpIterativeMethods.b = this.getValuesOfVector();
 			startActivity(gauss);
 		} else {
 

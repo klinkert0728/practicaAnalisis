@@ -18,7 +18,7 @@ public class Factorizacion extends Activity {
 	CheckBox crout;
 	CheckBox doolittle;
 	CheckBox cholesky;
-	
+
 	int sizeOfMatrix;
 	TableLayout table;
 	TableLayout b;
@@ -32,43 +32,43 @@ public class Factorizacion extends Activity {
 		crout = (CheckBox) findViewById(R.id.Crout);
 		doolittle = (CheckBox) findViewById(R.id.Doolittle);
 		cholesky = (CheckBox) findViewById(R.id.Cholesky);
-		
-		Log.i("ee", "puta");
 
 		sizeOfMatrix = getIntent().getExtras().getInt("size");
-		Log.i("ee", "puta");
+
 		editMatrix = new EditText[sizeOfMatrix][sizeOfMatrix];
-		Log.i("ee", "puta");
+
 		editBArray = new EditText[sizeOfMatrix];
-		Log.i("ee", "puta");
 
 		table = (TableLayout) findViewById(R.id.tableLayout);
-		Log.i("ee", "puta");
+
 		b = (TableLayout) findViewById(R.id.vectorLayout);
-		Log.i("ee", "antes");
 		this.fillTable(sizeOfMatrix, table);
-		Log.i("ee", "antes");
 		this.fillVector(sizeOfMatrix, b);
-		Log.i("ee", "puta");
 
 	}
 
 	private void fillVector(final int n, TableLayout table) {
 		table.removeAllViews();
-		 TableRow row = new TableRow(this);
-		    row.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+		TableRow row = new TableRow(this);
+		row.setLayoutParams(new TableRow.LayoutParams(
+				TableRow.LayoutParams.WRAP_CONTENT,
+				TableRow.LayoutParams.WRAP_CONTENT));
 		for (int i = 0; i < n; i++) {
-	        editBArray[i] = new EditText(this);
-	        
-	        editBArray[i].setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL|InputType.TYPE_NUMBER_FLAG_SIGNED);
-	        editBArray[i].setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+			editBArray[i] = new EditText(this);
 
-	        //edit.setText(Double.toString(editBArray[i]));
-	        editBArray[i].setHint("B" + i);
-	        
-	        row.addView(editBArray[i]);
-	    }
-	    table.addView(row);
+			editBArray[i].setInputType(InputType.TYPE_CLASS_NUMBER
+					| InputType.TYPE_NUMBER_FLAG_DECIMAL
+					| InputType.TYPE_NUMBER_FLAG_SIGNED);
+			editBArray[i].setLayoutParams(new TableRow.LayoutParams(
+					TableRow.LayoutParams.WRAP_CONTENT,
+					TableRow.LayoutParams.WRAP_CONTENT));
+
+			// edit.setText(Double.toString(editBArray[i]));
+			editBArray[i].setHint("B" + i);
+
+			row.addView(editBArray[i]);
+		}
+		table.addView(row);
 
 	}
 
@@ -113,19 +113,18 @@ public class Factorizacion extends Activity {
 		return matrix;
 
 	}
-	
-	public double[] getValuesOfVector(){
-		
-		double[] vector = new double [sizeOfMatrix];
-		for (int i = 0 ; i < sizeOfMatrix ; i ++){
-			
+
+	public double[] getValuesOfVector() {
+
+		double[] vector = new double[sizeOfMatrix];
+		for (int i = 0; i < sizeOfMatrix; i++) {
+
 			vector[i] = Double.parseDouble(editBArray[i].getText().toString());
-			
+
 		}
-		
+
 		return vector;
-		
-		
+
 	}
 
 	public void calcular(View v) {
@@ -146,14 +145,13 @@ public class Factorizacion extends Activity {
 			this.factorizacionDirectaCholesky(matrix, b, sizeOfMatrix);
 		} else {
 
-			
 		}
 
 	}
 
 	// Se implementa Crout
 
-	public  void factorizacionDirectaCrout(double A[][], double[] b, int n) {
+	public void factorizacionDirectaCrout(double A[][], double[] b, int n) {
 		double[][] L = new double[n][n];
 		double[][] U = new double[n][n];
 
@@ -222,7 +220,7 @@ public class Factorizacion extends Activity {
 		}
 	}
 
-	public  double[] sustitucionProgresiva(double[][] L, double[] b) {
+	public double[] sustitucionProgresiva(double[][] L, double[] b) {
 		int n = L.length;
 		double x[] = new double[n];
 		for (int i = 1; i < n + 1; i++) {
@@ -237,7 +235,7 @@ public class Factorizacion extends Activity {
 		return x;
 	}
 
-	public  double[] sustitucionRegresiva(double[][] U, double[] z) {
+	public double[] sustitucionRegresiva(double[][] U, double[] z) {
 		int n = U.length;
 		double[] x = new double[n];
 
@@ -251,7 +249,7 @@ public class Factorizacion extends Activity {
 		return x;
 	}
 
-	public  void imprimirMatriz(double[][] matrix, int n) {
+	public void imprimirMatriz(double[][] matrix, int n) {
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
 				System.out.print(matrix[i][j]);
@@ -262,7 +260,7 @@ public class Factorizacion extends Activity {
 		System.out.println("");
 	}
 
-	public  void printSpaces(int n, int k) {
+	public void printSpaces(int n, int k) {
 		if (n < k) {
 			for (int i = 0; i < k - n; i++) {
 				System.out.print(" ");
@@ -271,8 +269,7 @@ public class Factorizacion extends Activity {
 	}
 
 	// Se implementa doolittle
-	public  void factorizacionDirectaDoolittle(double A[][], double[] b,
-			int n) {
+	public void factorizacionDirectaDoolittle(double A[][], double[] b, int n) {
 		double[][] L = new double[n][n];
 		double[][] U = new double[n][n];
 
@@ -342,8 +339,7 @@ public class Factorizacion extends Activity {
 	}
 
 	// Se implementa Cholesky
-	public  void factorizacionDirectaCholesky(double A[][], double[] b,
-			int n) {
+	public void factorizacionDirectaCholesky(double A[][], double[] b, int n) {
 		double[][] L = new double[n][n];
 		double[][] U = new double[n][n];
 

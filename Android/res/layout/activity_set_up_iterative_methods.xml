@@ -10,47 +10,62 @@
         android:gravity="center_horizontal"
         android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/valorInicial"
+        <LinearLayout
+            android:id="@+id/input_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:ems="10"
-            android:hint="Valor Inicial"
-            android:inputType="number"
-            android:singleLine="true" />
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/iteraciones"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="Iteraciones"
-            android:singleLine="true" />
+            <HorizontalScrollView
+                android:id="@+id/horizontal_scroll_initial_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
 
-        <EditText
-            android:id="@+id/tolerancia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:ems="10"
-            android:hint="Tolerancia"
-            android:singleLine="true" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
 
-        <EditText
-            android:id="@+id/alpha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:ems="10"
-            android:hint="Alpha"
-            android:inputType="number"
-            android:singleLine="true" />
-        
-        
-        <Button
+                    <TableLayout
+                        android:id="@+id/tableLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp" >
+                    </TableLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <EditText
+                android:id="@+id/iteraciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:ems="10"
+                android:hint="Iteraciones"
+                android:inputType="number"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/tolerancia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:ems="10"
+                android:hint="Tolerancia"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/alpha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:ems="10"
+                android:hint="Alpha"
+                android:inputType="number"
+                android:singleLine="true" />
+
+            <Button
                 android:id="@+id/continue_button"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
@@ -58,8 +73,7 @@
                 android:layout_margin="15dp"
                 android:onClick="calcular"
                 android:text="@string/calcular" />
-
-     
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

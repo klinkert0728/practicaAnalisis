@@ -25,5 +25,8 @@
     <string name="PivoteoTotal">Pivoteo Total</string>
     <string name="PivoteoEscalonado">Pivoteo Escalonado</string>
     <string name="title_activity_set_up_iterative_methods">SetUpIterativeMethods</string>
+    <string name="title_activity_select_number_of_points">SelectNumberOfPoints</string>
+    <string name="title_activity_solucion_interpolacion">SolucionInterpolacion</string>
+    <string name="title_activity_solucion_integracion">SolucionIntegracion</string>
 
 </resources>
