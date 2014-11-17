@@ -102,6 +102,10 @@
             android:name=".SolucionIntegracion"
             android:label="@string/title_activity_solucion_integracion" >
         </activity>
+        <activity
+            android:name=".SolucionMetodosIterativos"
+            android:label="@string/title_activity_solucion_metodos_iterativos" >
+        </activity>
     </application>
 
 </manifest>

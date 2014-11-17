@@ -24,7 +24,7 @@
             android:id="@+id/simpson18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Simpson 1/8" />
+            android:text="Simpson 3/8" />
 
         <CheckBox
             android:id="@+id/trapecio"
@@ -71,7 +71,7 @@
                     android:id="@+id/derivada"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Derivada (Solo Trapecio)" />
+                    android:hint="Segunda Derivada (Solo Trapecio)" />
             </LinearLayout>
         </HorizontalScrollView>
 

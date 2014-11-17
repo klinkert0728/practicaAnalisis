@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 public class SetUpIterativeMethods extends Activity {
 
@@ -21,6 +22,7 @@ public class SetUpIterativeMethods extends Activity {
 	public static double[] b;
 	double[] inicialValues;
 	int method;
+	TextView resultText;
 
 	TableLayout tableView;
 	int sizeOfMatrix;
@@ -39,7 +41,7 @@ public class SetUpIterativeMethods extends Activity {
 		tolerancia = (EditText) findViewById(R.id.tolerancia);
 		method = this.getIntent().getExtras().getInt("nextMethod");
 		alpha = (EditText) findViewById(R.id.alpha);
-
+		resultText=(TextView)findViewById(R.id.resultado);
 		editVector = new EditText[matrix.length];
 		tableView = (TableLayout) findViewById(R.id.tableLayout);
 
@@ -106,36 +108,34 @@ public class SetUpIterativeMethods extends Activity {
 	}
 
 	public void calcular(View v) {
-		System.out.println("Hola");
 		inicialValues = this.getValuesOfVector();
-		
+
 		double tol = Double.parseDouble(tolerancia.getText().toString());
-		 
+
 		int numberOfIteration = Integer.parseInt(iteraciones.getText()
 				.toString());
-	
+
 		double realAlpha = Double.parseDouble(alpha.getText().toString());
 		;
-		
 
 		switch (method) {
 		case 1:
-			this.gaussSeidel(matrix, b, matrix.length, inicialValues, numberOfIteration, tol, realAlpha);
-			
-			System.out.println("marica");
+			this.gaussSeidel(matrix, b, matrix.length, inicialValues,
+					numberOfIteration, tol, realAlpha);
+
 			break;
 		case 2:
-			System.out.println("jacoby");
-			this.jacobi(matrix, b, matrix.length, inicialValues, numberOfIteration, tol, realAlpha);
+			this.jacobi(matrix, b, matrix.length, inicialValues,
+					numberOfIteration, tol, realAlpha);
 			break;
 		default:
 			break;
 		}
-		Log.i("Calcular", "calc");
+		
 	}
 
-	public static void jacobi(double[][] matrix, double[] b, int n,
-			double[] x0, int iteraciones, double tolerancia, double alpha) {
+	public void jacobi(double[][] matrix, double[] b, int n, double[] x0,
+			int iteraciones, double tolerancia, double alpha) {
 		int contador = 1;
 		imprimirMarcas(n);
 
@@ -172,6 +172,7 @@ public class SetUpIterativeMethods extends Activity {
 		if (error < tolerancia) {
 
 			System.out.println("\nVector X");
+			resultText.setText("Vector X  "+Arrays.toString(x));
 			System.out.println(Arrays.toString(x));
 			System.out.println("es una aproximación con una tolerancia de "
 					+ tolerancia);
@@ -180,7 +181,7 @@ public class SetUpIterativeMethods extends Activity {
 		}
 	}
 
-	public static double norma(double[] x, double[] x0, int n) {
+	public double norma(double[] x, double[] x0, int n) {
 		double mayor = Double.NEGATIVE_INFINITY;
 		double norma = 0;
 
@@ -193,7 +194,7 @@ public class SetUpIterativeMethods extends Activity {
 		return norma;
 	}
 
-	public static void imprimirMarcas(int n) {
+	public void imprimirMarcas(int n) {
 		System.out.print("Iteraciones");
 		printSpaces(String.valueOf("Iteraciones").length(), 15);
 		int[] marcas = new int[n];
@@ -207,14 +208,14 @@ public class SetUpIterativeMethods extends Activity {
 		System.out.print("Error");
 	}
 
-	public static void imprimirVector(double[] vector, int n) {
+	public void imprimirVector(double[] vector, int n) {
 		for (int i = 0; i < n; i++) {
 			System.out.print(vector[i]);
 			printSpaces(String.valueOf(vector[i]).length(), 30);
 		}
 	}
 
-	public static void printSpaces(int n, int k) {
+	public void printSpaces(int n, int k) {
 		if (n < k) {
 			for (int i = 0; i < k - n; i++) {
 				System.out.print(" ");
@@ -224,8 +225,8 @@ public class SetUpIterativeMethods extends Activity {
 
 	// Se implementa GaussSeidel
 
-	public static void gaussSeidel(double[][] matrix, double[] b, int n,
-			double[] x0, int iteraciones, double tolerancia, double alpha) {
+	public void gaussSeidel(double[][] matrix, double[] b, int n, double[] x0,
+			int iteraciones, double tolerancia, double alpha) {
 		int contador = 1;
 		imprimirMarcas(n);
 
@@ -266,6 +267,7 @@ public class SetUpIterativeMethods extends Activity {
 
 			System.out.println("\nVector X");
 			System.out.println(Arrays.toString(x));
+			resultText.setText("Vector X"+Arrays.toString(x));
 			System.out.println("es una aproximación con una tolerancia de "
 					+ tolerancia);
 		} else {

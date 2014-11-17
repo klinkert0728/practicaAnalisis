@@ -62,7 +62,6 @@
                 android:layout_margin="15dp"
                 android:ems="10"
                 android:hint="Alpha"
-                android:inputType="number"
                 android:singleLine="true" />
 
             <Button
@@ -73,6 +72,13 @@
                 android:layout_margin="15dp"
                 android:onClick="calcular"
                 android:text="@string/calcular" />
+            
+            <TextView 
+                android:id="@+id/resultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                />
         </LinearLayout>
     </LinearLayout>
 

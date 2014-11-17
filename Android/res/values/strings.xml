@@ -28,5 +28,6 @@
     <string name="title_activity_select_number_of_points">SelectNumberOfPoints</string>
     <string name="title_activity_solucion_interpolacion">SolucionInterpolacion</string>
     <string name="title_activity_solucion_integracion">SolucionIntegracion</string>
+    <string name="title_activity_solucion_metodos_iterativos">SolucionMetodosIterativos</string>
 
 </resources>
