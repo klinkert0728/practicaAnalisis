@@ -31,41 +31,45 @@ public class Metodos_Iterativos extends Activity {
 		setContentView(R.layout.activity_metodos__iterativos);
 		jacobi = (CheckBox) findViewById(R.id.Jacobi);
 		gaussSeidel = (CheckBox) findViewById(R.id.GaussSeidel);
-		
+
 		sizeOfMatrix = getIntent().getExtras().getInt("size");
-		Log.i("ee", "puta");
+
 		editMatrix = new EditText[sizeOfMatrix][sizeOfMatrix];
-		Log.i("ee", "puta");
+
 		editBArray = new EditText[sizeOfMatrix];
-		Log.i("ee", "puta");
 
 		table = (TableLayout) findViewById(R.id.tableLayout);
-		Log.i("ee", "puta");
+
 		b = (TableLayout) findViewById(R.id.vectorLayout);
-		Log.i("ee", "antes");
+
 		this.fillTable(sizeOfMatrix, table);
-		Log.i("ee", "antes");
+
 		this.fillVector(sizeOfMatrix, b);
-		Log.i("ee", "puta");
+
 	}
-	
-	
+
 	private void fillVector(final int n, TableLayout table) {
 		table.removeAllViews();
-		 TableRow row = new TableRow(this);
-		    row.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+		TableRow row = new TableRow(this);
+		row.setLayoutParams(new TableRow.LayoutParams(
+				TableRow.LayoutParams.WRAP_CONTENT,
+				TableRow.LayoutParams.WRAP_CONTENT));
 		for (int i = 0; i < n; i++) {
-	        editBArray[i] = new EditText(this);
-	        
-	        editBArray[i].setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL|InputType.TYPE_NUMBER_FLAG_SIGNED);
-	        editBArray[i].setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+			editBArray[i] = new EditText(this);
 
-	        //edit.setText(Double.toString(editBArray[i]));
-	        editBArray[i].setHint("B" + i);
-	        
-	        row.addView(editBArray[i]);
-	    }
-	    table.addView(row);
+			editBArray[i].setInputType(InputType.TYPE_CLASS_NUMBER
+					| InputType.TYPE_NUMBER_FLAG_DECIMAL
+					| InputType.TYPE_NUMBER_FLAG_SIGNED);
+			editBArray[i].setLayoutParams(new TableRow.LayoutParams(
+					TableRow.LayoutParams.WRAP_CONTENT,
+					TableRow.LayoutParams.WRAP_CONTENT));
+
+			// edit.setText(Double.toString(editBArray[i]));
+			editBArray[i].setHint("B" + i);
+
+			row.addView(editBArray[i]);
+		}
+		table.addView(row);
 
 	}
 
@@ -94,7 +98,7 @@ public class Metodos_Iterativos extends Activity {
 			table.addView(row);
 		}
 	}
-	
+
 	public double[][] getValuesOfMatrix() {
 		double[][] matrix = new double[sizeOfMatrix][sizeOfMatrix];
 
@@ -110,46 +114,40 @@ public class Metodos_Iterativos extends Activity {
 		return matrix;
 
 	}
-	
-	public double[] getValuesOfVector(){
-		
-		double[] vector = new double [sizeOfMatrix];
-		for (int i = 0 ; i < sizeOfMatrix ; i ++){
-			
+
+	public double[] getValuesOfVector() {
+
+		double[] vector = new double[sizeOfMatrix];
+		for (int i = 0; i < sizeOfMatrix; i++) {
+
 			vector[i] = Double.parseDouble(editBArray[i].getText().toString());
-			
+
 		}
-		
+
 		return vector;
-		
-		
+
 	}
 
-
 	public void calcular(View v) {
+
 		SetUpIterativeMethods.matrix = this.getValuesOfMatrix();
 		SetUpIterativeMethods.b = this.getValuesOfVector();
 		if (jacobi.isChecked() && !gaussSeidel.isChecked()) {
 
-			Intent jacobi = new Intent(this,SetUpIterativeMethods.class);
-			jacobi.putExtra("nextMethod",2);
-			
+			Intent jacobi = new Intent(this, SetUpIterativeMethods.class);
+			jacobi.putExtra("nextMethod", 2);
+
 			startActivity(jacobi);
 
 		} else if (gaussSeidel.isChecked() && !jacobi.isChecked()) {
-			
+
 			Intent gauss = new Intent(this, SetUpIterativeMethods.class);
 			gauss.putExtra("nextMethod", 1);
 			startActivity(gauss);
 		} else {
-
-			Log.i("Nada", "Nada");
 		}
 
 	}
-	
-	
-	
 
 	// Se implementa Jacobbi
 

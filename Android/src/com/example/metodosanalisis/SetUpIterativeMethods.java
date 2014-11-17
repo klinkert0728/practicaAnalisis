@@ -46,8 +46,6 @@ public class SetUpIterativeMethods extends Activity {
 		// sizeOfMatrix = matrix.length;
 		this.fillVector(matrix.length, tableView);
 
-		System.out.println("todo");
-
 	}
 
 	public double[] getValuesOfVector() {
@@ -110,36 +108,25 @@ public class SetUpIterativeMethods extends Activity {
 	public void calcular(View v) {
 		System.out.println("Hola");
 		inicialValues = this.getValuesOfVector();
-		System.out.println("InicialValues OK");
-
+		
 		double tol = Double.parseDouble(tolerancia.getText().toString());
-		System.out.println("Tol OK");
-
+		 
 		int numberOfIteration = Integer.parseInt(iteraciones.getText()
 				.toString());
-		System.out.println("iteratios OK");
+	
+		double realAlpha = Double.parseDouble(alpha.getText().toString());
+		;
+		
 
-		double realAlpha;
-
-		if (alpha.getText().toString() == "") {
-			realAlpha = 0.0;
-		} else {
-			realAlpha = Double.parseDouble(alpha.getText().toString());
-		}
-		System.out.println("vvvv OK");
-		for (int i = 0 ; i< inicialValues.length; i++){
-			System.out.println(inicialValues[i]);
-		}
 		switch (method) {
 		case 1:
-			this.gaussSeidel(matrix, b, sizeOfMatrix, inicialValues,
-					numberOfIteration, tol, realAlpha);
+			this.gaussSeidel(matrix, b, matrix.length, inicialValues, numberOfIteration, tol, realAlpha);
+			
 			System.out.println("marica");
 			break;
 		case 2:
 			System.out.println("jacoby");
-			this.jacobi(matrix, b, sizeOfMatrix, inicialValues,
-					numberOfIteration, tol, realAlpha);
+			this.jacobi(matrix, b, matrix.length, inicialValues, numberOfIteration, tol, realAlpha);
 			break;
 		default:
 			break;
