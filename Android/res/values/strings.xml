@@ -4,7 +4,7 @@
     <string name="app_name">MetodosAnalisis</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_una_variable">UnaVariableActivity</string>
+    <string name="title_activity_una_variable">UnaVariable</string>
     <string name="title_activity_sistemas_de_ecuaciones">SistemasDeEcuaciones</string>
     <string name="title_activity_interpolacion">Interpolacion</string>
     <string name="title_activity_interpolacion_integracion">InterpolacionIntegracion</string>
@@ -16,7 +16,7 @@
     <string name="title_activity_factorizacion">Factorizacion</string>
     <string name="title_activity_metodos__iterativos">Metodos_Iterativos</string>
     <string name="title_activity_pivoteo__escalonado">Pivoteo_Escalonado</string>
-    <string name="title_activity_select_size_of_matrix">SelectSizeOfMatrix</string>
+    <string name="title_activity_select_size_of_matrix">Tamaño de la matriz</string>
     <string name="numeroDeIngcognitas">Numero de incógnitas</string>
     <string name="continuar">Continuar</string>
     <string name="calcular">Calcular</string>
@@ -25,7 +25,7 @@
     <string name="PivoteoTotal">Pivoteo Total</string>
     <string name="PivoteoEscalonado">Pivoteo Escalonado</string>
     <string name="title_activity_set_up_iterative_methods">SetUpIterativeMethods</string>
-    <string name="title_activity_select_number_of_points">SelectNumberOfPoints</string>
+    <string name="title_activity_select_number_of_points">Numero de puntos</string>
     <string name="title_activity_solucion_interpolacion">SolucionInterpolacion</string>
     <string name="title_activity_solucion_integracion">SolucionIntegracion</string>
     <string name="title_activity_solucion_metodos_iterativos">SolucionMetodosIterativos</string>
