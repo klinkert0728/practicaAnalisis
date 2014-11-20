@@ -7,6 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+   	android:background="#f5f5f5"
     android:gravity="center"
     tools:context="com.example.metodosanalisis.SelectSizeOfMatrix" >
 
@@ -14,6 +15,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#93cf5a"
         android:text="@string/numeroDeIngcognitas" />
 
     <EditText
@@ -32,6 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
        	android:layout_marginTop="10dp"
+       	android:background="#f5f5f5"
+       	android:textColor="#93cf5a"
        	android:onClick="goToMethod"
         />
 
