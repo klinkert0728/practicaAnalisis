@@ -64,6 +64,7 @@ public final class R {
         public static final int SistEcuaciones=0x7f0a0022;
         public static final int TolST=0x7f0a0032;
         public static final int UnaVariable=0x7f0a0021;
+        public static final int Vermas=0x7f0a0008;
         public static final int X0=0x7f0a004a;
         public static final int X0ST=0x7f0a0031;
         public static final int X0rf=0x7f0a0056;
@@ -74,7 +75,6 @@ public final class R {
         public static final int Xrn=0x7f0a0050;
         public static final int action_settings=0x7f0a005a;
         public static final int alpha=0x7f0a003d;
-        public static final int button1=0x7f0a0008;
         public static final int button2=0x7f0a0046;
         public static final int button3=0x7f0a0024;
         public static final int button4=0x7f0a0045;

@@ -5,10 +5,12 @@ import java.lang.reflect.Method;
 import de.congrace.exp4j.Calculable;
 import de.congrace.exp4j.ExpressionBuilder;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -66,6 +68,11 @@ public class SolucionIntegracion extends Activity {
 		}
 		// this.integrarTrapecioGeneralizado(formula,"exp(x)",a,b,nroParticiones,0);
 	}
+
+	/*public void vermas(View v){
+		Intent vermas = new Intent(this,tabla.class);
+		startActivity(vermas);
+	}*/
 
 
 	public void integrarTrapecioGeneralizado(String funcion,
@@ -264,5 +271,6 @@ public class SolucionIntegracion extends Activity {
 			}
 		}
 	}
+
 
 }
