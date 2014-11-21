@@ -15,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 public class Metodos_Iterativos extends Activity {
 	CheckBox jacobi;
@@ -136,9 +137,8 @@ public class Metodos_Iterativos extends Activity {
 
 			Intent jacobi = new Intent(this, SetUpIterativeMethods.class);
 			jacobi.putExtra("nextMethod", 2);
-
 			startActivity(jacobi);
-
+			
 		} else if (gaussSeidel.isChecked() && !jacobi.isChecked()) {
 
 			Intent gauss = new Intent(this, SetUpIterativeMethods.class);
@@ -151,11 +151,11 @@ public class Metodos_Iterativos extends Activity {
 
 	// Se implementa Jacobbi
 
-	public static void jacobi(double[][] matrix, double[] b, int n,
+	public void jacobi(double[][] matrix, double[] b, int n,
 			double[] x0, int iteraciones, double tolerancia, double alpha) {
 		int contador = 1;
 		imprimirMarcas(n);
-
+		
 		System.out.print("\n" + (contador - 1));
 		printSpaces(String.valueOf(contador - 1).length(), 15);
 		System.out.print("");
@@ -185,6 +185,7 @@ public class Metodos_Iterativos extends Activity {
 			imprimirVector(x, n);
 			System.out.print(error + "\n");
 		}
+		
 
 		if (error < tolerancia) {
 
@@ -195,6 +196,7 @@ public class Metodos_Iterativos extends Activity {
 		} else {
 			System.out.println("Fracaso en " + iteraciones + " iteraciones.");
 		}
+		
 	}
 
 	public static double norma(double[] x, double[] x0, int n) {

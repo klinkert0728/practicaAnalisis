@@ -48,7 +48,8 @@
                     android:id="@+id/particiones"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Particiones" />
+                    android:hint="Particiones"
+                    android:inputType="numberDecimal" />
 
                 <EditText
                     android:id="@+id/formula"
@@ -60,13 +61,15 @@
                     android:id="@+id/Linf"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Limite inferior (a)" />
+                    android:hint="Limite inferior (a)"
+                    android:inputType="numberDecimal" />
 
                 <EditText
                     android:id="@+id/Lsup"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Limite Superior (b)" />
+                    android:hint="Limite Superior (b)"
+                    android:inputType="numberDecimal" />
 
                 <EditText
                     android:id="@+id/derivada"
@@ -81,6 +84,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Calcular" 
+            android:background="#f5f5f5"
+			android:textColor="#93cf5a"
             android:onClick="calcular"/>
     </LinearLayout>
 

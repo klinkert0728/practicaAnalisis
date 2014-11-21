@@ -5,7 +5,7 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/ResultadoMI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="10dp"
@@ -32,6 +32,8 @@
         android:layout_x="107dp"
         android:layout_y="384dp"
         android:onClick="calcular"
+        android:background="#f5f5f5"
+		android:textColor="#93cf5a"
         android:text="Calcular" />
 
     <EditText

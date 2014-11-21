@@ -18,6 +18,7 @@ public class SolucionInterpolacion extends Activity {
 	double valueToEvaluate;
 	TextView sol;
 	TextView func;
+	TextView solFinal;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

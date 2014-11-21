@@ -54,6 +54,7 @@
                 android:layout_margin="15dp"
                 android:ems="10"
                 android:hint="Tolerancia"
+                android:inputType="numberDecimal"
                 android:singleLine="true" />
 
             <EditText
@@ -63,6 +64,7 @@
                 android:layout_margin="15dp"
                 android:ems="10"
                 android:hint="Alpha"
+                android:inputType="numberDecimal"
                 android:singleLine="true" />
 
             <Button
@@ -72,6 +74,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:onClick="calcular"
+                android:background="#f5f5f5"
+				android:textColor="#93cf5a"
                 android:text="@string/calcular" />
             
             <TextView 

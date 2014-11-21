@@ -13,8 +13,8 @@
         android:id="@+id/X0ST"
         android:layout_width="84dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/ResultadoMI"
+        android:layout_below="@+id/ResultadoMI"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="X0"
@@ -66,7 +66,7 @@
     </EditText>
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/ResultadoMI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -78,8 +78,8 @@
         android:id="@+id/FuncionST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView1"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_alignTop="@+id/ResultadoMI"
+        android:layout_toRightOf="@+id/ResultadoMI"
         android:ems="10"
         android:inputType="textMultiLine" />
 
@@ -91,6 +91,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="62dp"
         android:onClick="CalcularST"
+        android:background="#f5f5f5"
+		android:textColor="#93cf5a"
         android:text="Calcular" />
 
 </RelativeLayout>

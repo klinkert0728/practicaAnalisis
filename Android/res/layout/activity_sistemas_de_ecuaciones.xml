@@ -41,8 +41,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="77dp"
         android:background="#f5f5f5"
-        android:textColor="#93cf5a"
         android:onClick="factorizacion"
-        android:text="Factrizacion" />
+        android:text="Factorizacion"
+        android:textColor="#93cf5a" />
 
 </RelativeLayout>

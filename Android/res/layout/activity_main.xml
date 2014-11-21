@@ -16,22 +16,10 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
-        android:text="Métodos Numéricos"
-        android:textSize="30dp"
+        android:text="Métodos Numéricos App"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#93cf5a"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Button
-        android:id="@+id/UnaVariable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/SistEcuaciones"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="66dp"
-        android:textColor="#93cf5a"
-        android:background="#f5f5f5"
-         android:onClick="UnaVar"
-        android:text="Ecuaciones De Una Variable" />
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/Interpolacion"
@@ -47,26 +35,39 @@
         android:text="Interpolación" />
 
     <Button
+        android:id="@+id/SistEcuaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/UnaVariable"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="#f5f5f5"
+        android:onClick="SistEcua"
+        android:text="Sistemas De Ecuaciones"
+        android:textColor="#93cf5a" />
+
+    <Button
+        android:id="@+id/UnaVariable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SistEcuaciones"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="65dp"
+        android:background="#f5f5f5"
+        android:onClick="UnaVar"
+        android:text="Ecuaciones De Una Variable"
+        android:textColor="#93cf5a" />
+
+    <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/SistEcuaciones"
         android:layout_below="@+id/Interpolacion"
-        android:layout_marginTop="26dp"
-        android:textColor="#93cf5a"
+        android:layout_marginTop="18dp"
         android:background="#f5f5f5"
         android:onClick="Integ"
-        android:text="Interpolación e Integración" />
-
-    <Button
-        android:id="@+id/SistEcuaciones"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textColor= "#93cf5a"
-        android:background="#f5f5f5"
-        android:onClick="SistEcua"
-        android:text="Sistemas De Ecuaciones" />
+        android:text="Interpolación e Integración"
+        android:textColor="#93cf5a" />
 
 </RelativeLayout>

@@ -12,7 +12,7 @@
     tools:context="com.example.metodosanalisis.SelectSizeOfMatrix" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/ResultadoMI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#93cf5a"

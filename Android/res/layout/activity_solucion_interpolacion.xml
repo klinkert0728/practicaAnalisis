@@ -21,28 +21,34 @@
 	        android:layout_gravity="center_vertical"
 	        android:gravity="center_horizontal"
 	        android:textColor="#93cf5a"
+	        android:textSize="17dp"
 	        android:text="Resultado" />
 
 	    <TextView
 	        android:id="@+id/polinomio"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
+	        android:textSize="20sp"
+	        android:textStyle="bold"
 	        android:layout_marginTop="50dp" />
 
-	    <Button
+	  <!--    <Button
 	        android:id="@+id/Vermas"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	       	android:background="#f5f5f5"
 	       	android:textColor="#93cf5a"
 	       	android:onClick="vermas"
-	        android:text="Ver mas" />
+	        android:text="Ver mas" /> -->
 
 	    <TextView
 	        android:id="@+id/funcion"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_marginTop="20dp" />
+	        android:layout_marginTop="20dp" 
+	        android:textSize="20sp"
+	        android:textStyle="bold"
+	        />
 	</LinearLayout>
 
 </ScrollView>

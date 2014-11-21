@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import android.R.integer;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -32,6 +33,7 @@ public class SetUpIterativeMethods extends Activity {
 	EditText iteraciones;
 	EditText tolerancia;
 	EditText alpha;
+	TextView sol;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class SetUpIterativeMethods extends Activity {
 		resultText=(TextView)findViewById(R.id.resultado);
 		editVector = new EditText[matrix.length];
 		tableView = (TableLayout) findViewById(R.id.tableLayout);
-
+		//sol = (TextView) findViewById(R.id.ResultadoMI);
 		// sizeOfMatrix = matrix.length;
 		this.fillVector(matrix.length, tableView);
 
@@ -122,15 +124,21 @@ public class SetUpIterativeMethods extends Activity {
 		case 1:
 			this.gaussSeidel(matrix, b, matrix.length, inicialValues,
 					numberOfIteration, tol, realAlpha);
+			/*Intent GS = new Intent(this, SolucionMetodosIterativos.class);
+			startActivity(GS);*/
 
 			break;
 		case 2:
 			this.jacobi(matrix, b, matrix.length, inicialValues,
 					numberOfIteration, tol, realAlpha);
+			/*Intent jacobi = new Intent(this, SolucionMetodosIterativos.class);
+			startActivity(jacobi);*/
 			break;
 		default:
 			break;
 		}
+		
+		
 		
 	}
 
@@ -174,10 +182,14 @@ public class SetUpIterativeMethods extends Activity {
 			System.out.println("\nVector X");
 			resultText.setText("Vector X  "+Arrays.toString(x));
 			System.out.println(Arrays.toString(x));
+			resultText.setText("Vector X  "+Arrays.toString(x)+"es una aproximación con una tolerancia de "
+					+ Double.toString(tolerancia));
 			System.out.println("es una aproximación con una tolerancia de "
 					+ tolerancia);
+			
 		} else {
 			System.out.println("Fracaso en " + iteraciones + " iteraciones.");
+			resultText.setText("Fracaso en " + Double.toString(iteraciones) + " iteraciones.");
 		}
 	}
 
@@ -267,11 +279,13 @@ public class SetUpIterativeMethods extends Activity {
 
 			System.out.println("\nVector X");
 			System.out.println(Arrays.toString(x));
-			resultText.setText("Vector X"+Arrays.toString(x));
+			resultText.setText("Vector X  "+Arrays.toString(x)+"es una aproximación con una tolerancia de "
+					+ Double.toString(tolerancia));
 			System.out.println("es una aproximación con una tolerancia de "
 					+ tolerancia);
 		} else {
 			System.out.println("Fracaso en " + iteraciones + " iteraciones.");
+			resultText.setText("Fracaso en " + Double.toString(iteraciones) + " iteraciones.");
 		}
 	}
 
