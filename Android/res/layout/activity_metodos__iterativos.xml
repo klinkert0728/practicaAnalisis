@@ -93,8 +93,6 @@
             android:layout_marginLeft="100dp"
             android:layout_marginTop="10dp"
             android:onClick="calcular"
-            android:background="#f5f5f5"
-			android:textColor="#93cf5a"
             android:text="@string/calcular" />
     </LinearLayout>
 

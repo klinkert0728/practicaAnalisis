@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 public class Eliminacion_Gauss extends Activity {
 
@@ -24,6 +25,7 @@ public class Eliminacion_Gauss extends Activity {
 	int sizeOfMatrix;
 	TableLayout table;
 	EditText[][] editMatrix;
+	TextView Resultado;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class Eliminacion_Gauss extends Activity {
 		total = (CheckBox) findViewById(R.id.PivoteoTotal);
 		sinPivoteo = (CheckBox) findViewById(R.id.SinPivoteo);
 		escalonado = (CheckBox) findViewById(R.id.PivoteoEscalonado);
+		Resultado = (TextView) findViewById(R.id.resultado);
 
 		sizeOfMatrix = getIntent().getExtras().getInt("size");
 		editMatrix = new EditText[sizeOfMatrix][sizeOfMatrix + 1];
@@ -149,6 +152,7 @@ public class Eliminacion_Gauss extends Activity {
 			}
 			x[i - 1] = (matrix[i - 1][n] - sumatoria) / matrix[i - 1][i - 1];
 			System.out.println("X" + i + " = " + x[i - 1]);
+			Resultado.setText("X" + i + " = " + x[i - 1]);
 		}
 	}
 
@@ -235,6 +239,7 @@ public class Eliminacion_Gauss extends Activity {
 			}
 			x[i - 1] = (matrix[i - 1][n] - sumatoria) / matrix[i - 1][i - 1];
 			System.out.println("X" + marcas[i - 1] + " = " + x[i - 1]);
+			Resultado.setText("X" + i + " = " + x[i - 1]);
 		}
 	}
 
@@ -342,6 +347,7 @@ public class Eliminacion_Gauss extends Activity {
 			}
 			x[i - 1] = (matrix[i - 1][n] - sumatoria) / matrix[i - 1][i - 1];
 			System.out.println("X" + i + " = " + x[i - 1]);
+			Resultado.setText("X" + i + " = " + x[i - 1]);
 		}
 	}
 
@@ -399,6 +405,7 @@ public class Eliminacion_Gauss extends Activity {
 			}
 			x[i - 1] = (matrix[i - 1][n] - sumatoria) / matrix[i - 1][i - 1];
 			System.out.println("X" + i + " = " + x[i - 1]);
+			Resultado.setText("X" + i + " = " + x[i - 1]);
 		}
 	}
 

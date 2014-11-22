@@ -13,11 +13,13 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 public class Factorizacion extends Activity {
 	CheckBox crout;
 	CheckBox doolittle;
 	CheckBox cholesky;
+	TextView Resultado;
 
 	int sizeOfMatrix;
 	TableLayout table;
@@ -32,7 +34,8 @@ public class Factorizacion extends Activity {
 		crout = (CheckBox) findViewById(R.id.Crout);
 		doolittle = (CheckBox) findViewById(R.id.Doolittle);
 		cholesky = (CheckBox) findViewById(R.id.Cholesky);
-
+		Resultado = (TextView) findViewById(R.id.resultado);
+		
 		sizeOfMatrix = getIntent().getExtras().getInt("size");
 
 		editMatrix = new EditText[sizeOfMatrix][sizeOfMatrix];
@@ -213,10 +216,12 @@ public class Factorizacion extends Activity {
 		System.out.println("\nSustitución Progresiva Lz=b");
 		double[] z = sustitucionProgresiva(L, b);
 		System.out.println("Z:" + Arrays.toString(z));
+		Resultado.setText("Z:" + Arrays.toString(z));
 		System.out.println("\nSustitución Regresiva Ux=z");
 		double[] x = sustitucionRegresiva(U, z);
 		for (int i = 0; i < x.length; i++) {
 			System.out.println("X" + (i + 1) + " = " + x[i]);
+			Resultado.setText("X" + (i + 1) + " = " + x[i]);
 		}
 	}
 
@@ -331,10 +336,12 @@ public class Factorizacion extends Activity {
 		System.out.println("\nSustitución Progresiva Lz=b");
 		double[] z = sustitucionProgresiva(L, b);
 		System.out.println("Z:" + Arrays.toString(z));
+		Resultado.setText("Z:" + Arrays.toString(z));
 		System.out.println("\nSustitución Regresiva Ux=z");
 		double[] x = sustitucionRegresiva(U, z);
 		for (int i = 0; i < x.length; i++) {
 			System.out.println("X" + (i + 1) + " = " + x[i]);
+			Resultado.setText("X" + (i + 1) + " = " + x[i]);
 		}
 	}
 
@@ -403,10 +410,12 @@ public class Factorizacion extends Activity {
 		System.out.println("\nSustitución Progresiva Lz=b");
 		double[] z = sustitucionProgresiva(L, b);
 		System.out.println("Z:" + Arrays.toString(z));
+		Resultado.setText("Z:" + Arrays.toString(z));
 		System.out.println("\nSustitución Regresiva Ux=z");
 		double[] x = sustitucionRegresiva(U, z);
 		for (int i = 0; i < x.length; i++) {
 			System.out.println("X" + (i + 1) + " = " + x[i]);
+			Resultado.setText("X" + (i + 1) + " = " + x[i]);
 		}
 	}
 
